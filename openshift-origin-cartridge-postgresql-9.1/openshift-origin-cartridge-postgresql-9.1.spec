@@ -2,7 +2,7 @@
 %global frameworkdir %{_libexecdir}/openshift/cartridges/postgresql-9.1
 
 Name: openshift-origin-cartridge-postgresql-9.1
-Version: 0.0.0
+Version: 0.0.1
 Release: 1%{?dist}
 Summary: Provides embedded PostgreSQL support
 
@@ -105,3 +105,6 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Fri Dec 14 2012 Krishna Raman <kraman@gmail.com> 0.0.1-1
+- new package built with tito
+

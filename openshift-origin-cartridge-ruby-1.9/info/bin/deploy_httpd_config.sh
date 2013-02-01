@@ -26,6 +26,8 @@ fi
 cat <<EOF > "$RUBY_INSTANCE_DIR/conf.d/openshift.conf"
 ServerRoot "$RUBY_INSTANCE_DIR"
 DocumentRoot "$OPENSHIFT_REPO_DIR/public"
+DefaultRuntimeDir $RUBY_INSTANCE_DIR/run
+
 Listen $IP:8080
 User $uuid
 Group $uuid

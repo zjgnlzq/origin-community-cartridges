@@ -1,0 +1,33 @@
+Name: phpmyadmin-3.5
+Display-Name: phpMyAdmin 3.5
+Description: "Web based MySQL admin tool. Requires the MySQL cartridge to be installed first."
+Version: 1.1.0
+License: ASL 2.0
+Website: "http://www.phpmyadmin.net/"
+Categories:
+  - embedded
+Cart-Data:
+  - Key: connection_url
+    Type: cart_data
+    Description: "phpMyAdmin connection URL"
+Provides:
+  - phpmyadmin-3.5
+  - "phpmyadmin"
+Publishes:
+  get-serve-info:
+    Type: "NET_TCP:db-config:url"
+Subscribes:
+  set-db-connection-info:
+    Type: "NET_TCP:db:connection-info"
+    Required: false
+  set-mysql-connection-info:
+    Type: "NET_TCP:db:mysql"
+    Required : true
+Scaling:
+  Min: 1
+  Max: 1
+Endpoints:
+  - PROXY_PORT: 8080
+Configure-Order:
+  - mysql
+  - phpmyadmin

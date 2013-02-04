@@ -2,7 +2,7 @@
 %global frameworkdir %{_libexecdir}/openshift/cartridges/phpmyadmin-3.5
 
 Name: openshift-origin-cartridge-phpmyadmin-3.5
-Version: 0.0.0
+Version: 0.0.1
 Release: 1%{?dist}
 Summary: Embedded phpMyAdmin support for express
 
@@ -65,3 +65,6 @@ rm -rf $RPM_BUILD_ROOT
 %doc %{cartridgedir}/LICENSE
 
 %changelog
+* Mon Feb 04 2013 Krishna Raman <kraman@gmail.com> 0.0.1-1
+- new package built with tito
+

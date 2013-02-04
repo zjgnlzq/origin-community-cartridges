@@ -2,7 +2,7 @@
 
 Summary:   Provides mod_perl support
 Name:      openshift-origin-cartridge-perl-5.16
-Version:   0.0.0
+Version:   0.0.1
 Release:   1%{?dist}
 Group:     Development/Languages
 License:   ASL 2.0
@@ -112,3 +112,6 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Mon Feb 04 2013 Krishna Raman <kraman@gmail.com> 0.0.1-1
+- new package built with tito
+

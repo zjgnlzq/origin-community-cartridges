@@ -2,7 +2,7 @@
 
 Summary:   Provides php-5.4 support
 Name:      openshift-origin-cartridge-php-5.4
-Version:   0.0.0
+Version:   0.0.1
 Release:   1%{?dist}
 Group:     Development/Languages
 License:   ASL 2.0
@@ -115,3 +115,6 @@ rm -rf %{buildroot}
 %doc %{cartridgedir}/LICENSE
 
 %changelog
+* Mon Feb 04 2013 Krishna Raman <kraman@gmail.com> 0.0.1-1
+- new package built with tito
+

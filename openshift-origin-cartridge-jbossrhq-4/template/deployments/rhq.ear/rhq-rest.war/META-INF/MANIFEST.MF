@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: hudson
+Build-Jdk: 1.7.0_09
+Specification-Title: RHQ REST interface
+Specification-Version: 4.6.0-SNAPSHOT
+Specification-Vendor: Red Hat, Inc.
+Implementation-Title: RHQ REST interface
+Implementation-Version: 4.6.0-SNAPSHOT
+Implementation-Vendor-Id: org.rhq
+Implementation-Vendor: Red Hat, Inc.
+Maven-Version: 3.0.4
+Build-Time: 12/05/12 06:48 PM GMT
+Os-Name: Linux
+Java-Version: 1.7.0_09
+Java-Vendor: Oracle Corporation
+Os-Version: 2.6.32-71.el6.i686
+Os-Arch: i386
+Build-Number: a0f1b80
+

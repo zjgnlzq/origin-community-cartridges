@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+   xmlns:h="http://java.sun.com/jsf/html"
+   xmlns:f="http://java.sun.com/jsf/core"
+   xmlns:ui="http://java.sun.com/jsf/facelets"
+   xmlns:c="http://java.sun.com/jstl/core"
+   xmlns:a4j="http://richfaces.org/a4j"
+   xmlns:rich="http://richfaces.org/rich"
+   xmlns:onc="http://jboss.org/on/component"
+   xmlns:onf="http://jboss.org/on/function">
+
+THIS TEXT WILL BE REMOVED.
+
+The template for all Resource pages (i.e. the Monitor/Inventory/etc. tabbed pages).
+
+TEMPLATE PARAMETERS:
+   content - the page content
+
+CONTEXT PARAMETERS:
+   pageTitle - the page title
+   pageHelpURL - a context-sensitive help URL for the page (optional)
+   selectedTabName - the name of the tab/subTab to select in the following format:
+   tabName[.subtabName] (e.g. "Inventory" or "Monitor.Visibility")
+
+REQUEST PARAMETERS:
+   id - the id of the Resource being accessed
+
+<ui:composition template="/rhq/entity/layout/main.xhtml">
+
+    THIS TEXT WILL BE REMOVED AS WELL.
+
+    <ui:param name="defaultPageTitle"
+      value="#{ResourceUIBean.resourceType.name} '#{ResourceUIBean.name}'" />
+
+   <ui:define name="breadcrumbs">
+
+      <!--<onc:resourceLineage resourceId="#{ResourceUIBean.id}"/>-->
+
+      <ui:remove>
+         <!--
+              Find the resourceId in the request, look up the corresponding resource, and stuff it into the request as well.
+              TODO: Get rid of this, once all pages are switched over to using ResourceUIBean rather than Resource.
+            -->
+      </ui:remove>
+        #{onf:loadResource()}
+
+    </ui:define>
+
+   <ui:define name="summary">
+
+      <ui:remove>
+         <!-- NOTE: Besides being included here, summary.xhtml is also leveraged by JSP-based pages. Specifically, it is
+     included (via an AJAX request) in /common/components/PageTitle.jsp. -->
+      </ui:remove>
+      <ui:include src="summary.xhtml" />
+
+   </ui:define>
+
+   <ui:define name="tabBar">
+
+      <onc:tabBar selectedTabName="#{selectedTabName}">
+
+            <f:param name="id" value="#{param.id}" />
+
+            <ui:remove>===== Grab the tabs from the perspective manager =====</ui:remove>
+
+            <c:forEach
+               var="tab"
+               items="#{ResourceUIBean.tabs}">
+               <c:if test="#{not tab.debugMode or GlobalPermissionsUIBean.debugMode}">
+                   <onc:tab name="#{tab.name}" displayName="#{tab.displayName}" image="#{tab.iconUrl}" url="#{tab.url}">
+                       <c:forEach
+                            var="subtab"
+                            items="#{tab.children}">
+                           <c:if test="#{not subtab.debugMode or GlobalPermissionsUIBean.debugMode}">
+                               <onc:subtab name="#{subtab.name}" displayName="#{subtab.displayName}" url="#{subtab.url}" />
+                           </c:if>
+                       </c:forEach>
+                   </onc:tab>
+                </c:if>
+            </c:forEach>          
+
+      </onc:tabBar>
+
+      <!-- Shows the results of the last action executed. -->
+      <h:messages showSummary="true" showDetail="true"
+         infoClass="InfoBlock" warnClass="WarnBlock"
+         errorClass="ErrorBlock" fatalClass="FatalBlock"
+         globalOnly="true" layout="table" width="100%" />
+
+   </ui:define>
+
+   <ui:define name="nav">
+
+       <ui:include src="/rhq/resource/navigation/ResourcesTree.xhtml" />
+
+   </ui:define>
+
+   <ui:define name="content">
+
+      <h1>Default Resource Content</h1>
+
+
+   </ui:define>
+
+</ui:composition>
+
+THIS TEXT WILL BE REMOVED AS WELL.
+
+</html>

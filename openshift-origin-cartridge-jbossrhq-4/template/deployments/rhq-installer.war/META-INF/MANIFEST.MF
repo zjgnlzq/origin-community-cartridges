@@ -1,0 +1,23 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: hudson
+Build-Jdk: 1.7.0_09
+Specification-Title: RHQ Enterprise GWT Installer GUI
+Specification-Version: 4.6.0-SNAPSHOT
+Specification-Vendor: Red Hat, Inc.
+Implementation-Title: RHQ Enterprise GWT Installer GUI
+Implementation-Version: 4.6.0-SNAPSHOT
+Implementation-Vendor-Id: org.rhq
+Implementation-Vendor: Red Hat, Inc.
+Build-Number: a0f1b80
+Build-Time: 12/05/12 06:49 PM GMT
+Dependencies: org.jboss.msc,org.jboss.as.controller-client,org.jboss.a
+ s.controller,org.jboss.as.server
+Java-Vendor: Oracle Corporation
+Java-Version: 1.7.0_09
+Maven-Version: 3.0.4
+Os-Arch: i386
+Os-Name: Linux
+Os-Version: 2.6.32-71.el6.i686
+

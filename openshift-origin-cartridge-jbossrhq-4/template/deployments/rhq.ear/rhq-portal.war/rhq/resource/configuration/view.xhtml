@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:c="http://java.sun.com/jstl/core"
+      xmlns:onc="http://jboss.org/on/component"
+      xmlns:rich="http://richfaces.org/rich"
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:s="http://jboss.com/products/seam/taglib">
+
+
+THIS TEXT WILL BE REMOVED.
+
+<ui:composition template="/rhq/resource/layout/main.xhtml">
+
+  THIS TEXT WILL BE REMOVED AS WELL.
+
+  <ui:param name="pageTitle"
+            value="#{ResourceUIBean.resourceType.name} '#{ResourceUIBean.name}' - View Configuration"/>
+
+  <ui:param name="selectedTabName" value="Configuration.Current"/>
+
+  <ui:define name="content">
+
+    <ui:remove>
+       Don't need outputText here, because configurationViewer appears to ALWAYS load before ResourceUIBean, which
+       means the authorization checks the SLSB do will bubbled up to it.  So the strategy here will be to allow
+       configurationViewer.initialize to be called, which will throw the PermissionException and add a FacesMessage.
+    <h:outputText rendered="#{not ResourceUIBean.permissions.configureRead}"
+                  value="You do not have permissions to view configuration data for this resource" />
+    </ui:remove>
+
+    <h:form id="viewResourceConfigurationForm" 
+            rendered="#{ResourceUIBean.permissions.configureRead and configurationViewer.initialized}">
+
+      <h:panelGroup layout="block" styleClass="InfoBlock"
+                    rendered="#{configurationViewer.updateInProgress}">
+        <b>${msg['note']}</b> ${msg['resource.config.Current.updateInProgress']}
+      </h:panelGroup>
+            
+      <input type="hidden" name="id" value="#{ResourceUIBean.id}"/>
+
+      <h:panelGrid columns="2" style="width:100%">
+        <h:panelGrid columns="1" style="width:100%" columnClasses="raw-edit-footer">
+          <h:panelGroup style="text-align:right">
+            <s:button id="upperEditButton"
+                      value="Edit"
+                      view="edit.xhtml"
+                      styleClass="buttonmed"
+                      rendered="#{ResourceUIBean.permissions.configureWrite and !configurationViewer.updateInProgress}">
+              <f:param name="id" value="#{ResourceUIBean.id}"/>
+              <f:param name="tab" value="#{configurationViewer.selectedTab}"/>
+            </s:button>
+          </h:panelGroup>
+        </h:panelGrid>
+      </h:panelGrid>
+
+      <c:if test="${configurationViewer.structuredSupported or configurationViewer.structuredAndRawSupported}">
+          <ui:include src="structured.xhtml"/>
+      </c:if>
+
+      <h:panelGrid columns="1" style="width:100%" columnClasses="raw-edit-footer">
+        <h:panelGroup style="text-align:right">
+          <s:button id="lowerEditButton"
+                    value="Edit"
+                    view="edit.xhtml"
+                    styleClass="buttonmed"
+                    rendered="#{ResourceUIBean.permissions.configureWrite and !configurationViewer.updateInProgress}">
+            <f:param name="id" value="#{ResourceUIBean.id}"/>
+            <f:param name="tab" value="#{configurationViewer.selectedTab}"/>
+          </s:button>
+        </h:panelGroup>
+      </h:panelGrid>
+
+    </h:form>
+  </ui:define>
+
+</ui:composition>
+
+THIS TEXT WILL BE REMOVED AS WELL.
+
+</html>

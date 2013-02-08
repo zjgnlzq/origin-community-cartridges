@@ -1,0 +1,38 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: hudson
+Build-Jdk: 1.7.0_09
+Specification-Title: RHQ Enterprise Server JAR
+Specification-Version: 4.6.0-SNAPSHOT
+Specification-Vendor: Red Hat, Inc.
+Implementation-Title: RHQ Enterprise Server JAR
+Implementation-Version: 4.6.0-SNAPSHOT
+Implementation-Vendor-Id: org.rhq
+Implementation-Vendor: Red Hat, Inc.
+Build-Number: a0f1b80
+Build-Time: 12/05/12 06:46 PM GMT
+Java-Vendor: Oracle Corporation
+Java-Version: 1.7.0_09
+Maven-Version: 3.0.4
+Os-Arch: i386
+Os-Name: Linux
+Os-Version: 2.6.32-71.el6.i686
+Class-Path: lib/rhq-enterprise-comm-4.6.0-SNAPSHOT.jar lib/rhq-core-ut
+ il-4.6.0-SNAPSHOT.jar lib/jdom-1.0.jar lib/rhq-core-comm-api-4.6.0-SN
+ APSHOT.jar lib/dom4j-1.6.jar lib/i18nlog-1.0.10.jar lib/jboss-common-
+ 1.2.1.GA.jar lib/jboss-jmx-4.2.3.GA.jar lib/jboss-remoting-2.2.2.SP8.
+ jar lib/jboss-serialization-1.0.3.GA.jar lib/rhq-enterprise-server-xm
+ l-schemas-4.6.0-SNAPSHOT.jar lib/rhq-core-client-api-4.6.0-SNAPSHOT.j
+ ar lib/rhq-core-dbutils-4.6.0-SNAPSHOT.jar lib/postgresql-9.1-902.jdb
+ c4.jar lib/safe-invoker-4.6.0-SNAPSHOT.jar lib/rhq-common-drift-4.6.0
+ -SNAPSHOT.jar lib/commons-io-1.4.jar lib/rhq-container-lib-4.6.0-SNAP
+ SHOT.jar lib/diffutils-1.2.1.jar lib/rhq-jboss-as-dmr-client-4.6.0-SN
+ APSHOT.jar lib/hamcrest-core-1.1.jar lib/antlr-runtime-3.2.jar lib/st
+ ringtemplate-3.2.jar lib/commons-beanutils-1.6.1.jar lib/commons-coll
+ ections-3.2.jar lib/commons-httpclient-3.0.1.jar lib/junit-3.8.1.jar 
+ lib/commons-codec-1.2.jar lib/commons-lang-2.4.jar lib/commons-valida
+ tor-1.1.4.jar lib/getopt-1.0.13.jar lib/jboss-cache-1.4.1.SP9.jar lib
+ /snmp4j-1.8.2.jar lib/concurrent-1.3.4.jar lib/rss4j-0.92-on.2.jar li
+ b/jsch-0.1.29.jar lib/snakeyaml-1.8.jar
+

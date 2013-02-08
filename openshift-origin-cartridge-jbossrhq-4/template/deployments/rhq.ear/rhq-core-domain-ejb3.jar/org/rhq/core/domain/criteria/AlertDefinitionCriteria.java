@@ -1,0 +1,223 @@
+/*
+ * RHQ Management Platform
+ * Copyright (C) 2005-2008 Red Hat, Inc.
+ * All rights reserved.
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License, version 2, as
+ * published by the Free Software Foundation, and/or the GNU Lesser
+ * General Public License, version 2.1, also as published by the Free
+ * Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License and the GNU Lesser General Public License
+ * for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * and the GNU Lesser General Public License along with this program;
+ * if not, write to the Free Software Foundation, Inc.,
+ * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+ */
+package org.rhq.core.domain.criteria;
+
+import java.util.Arrays;
+import java.util.List;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
+
+import org.rhq.core.domain.alert.AlertDefinition;
+import org.rhq.core.domain.alert.AlertPriority;
+import org.rhq.core.domain.util.PageOrdering;
+
+/**
+ * @author Joseph Marques
+ */
+@XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
+@SuppressWarnings("unused")
+public class AlertDefinitionCriteria extends Criteria {
+    private static final long serialVersionUID = 1L;
+
+    public static final String SORT_FIELD_RESOURCE_ID = "resourceId";
+    public static final String SORT_FIELD_RESOURCE_NAME = "resourceName";
+
+    private Integer filterId;
+    private List<Integer> filterIds;
+    private String filterName;
+    private String filterDescription;
+    private AlertPriority filterPriority;
+    private NonBindingOverrideFilter filterAlertTemplateOnly; // requires overrides - finds only alert templates    
+    private Integer filterAlertTemplateParentId; // requires overrides
+    private Integer filterAlertTemplateResourceTypeId; // requires overrides
+    private String filterAlertTemplateResourceTypeName; // requires overrides
+    private List<Integer> filterResourceIds; // requires overrides
+    private List<Integer> filterResourceGroupIds; // requires overrides
+    private Integer filterGroupAlertDefinitionId;
+    private Boolean filterEnabled;
+    private Boolean filterDeleted = false; // find enabled definitions by default
+    private NonBindingOverrideFilter filterResourceOnly; // requires overrides - finds only those associated with a resource
+    private List<String> filterNotificationSenderNames;
+
+    private boolean fetchAlerts;
+    private boolean fetchGroupAlertDefinition;
+    private boolean fetchConditions;
+    private boolean fetchAlertNotifications;
+    private boolean fetchResource;
+    private boolean fetchResourceType;
+
+    private PageOrdering sortName;
+    private PageOrdering sortPriority;
+    private PageOrdering sortResourceId; // requires sort override
+    private PageOrdering sortResourceName; // requires sort override    
+
+    public AlertDefinitionCriteria() {
+        filterOverrides.put("alertTemplateOnly", "resourceType IS NOT NULL");
+        filterOverrides.put("alertTemplateParentId", "parentId = ?");
+        filterOverrides.put("alertTemplateResourceTypeId", "resourceType.id = ?");
+        filterOverrides.put("alertTemplateResourceTypeName", "resourceType.name like ?");
+        filterOverrides.put("resourceIds", "resource.id IN ( ? )");
+        filterOverrides.put("resourceGroupIds", "resourceGroup.id IN ( ? )");
+        filterOverrides.put("groupAlertDefinitionId", "groupAlertDefinition.id = ?");
+        filterOverrides.put("resourceOnly", "resource IS NOT NULL");
+        filterOverrides.put("notificationSenderNames", "id IN ("
+            + "SELECT notif.alertDefinition.id FROM AlertNotification notif " + "WHERE notif.senderName IN ( ? ))");
+        filterOverrides.put("filterIds", "id IN ( ? )");
+
+        sortOverrides.put(SORT_FIELD_RESOURCE_ID, "resource.id");
+        sortOverrides.put(SORT_FIELD_RESOURCE_NAME, "resource.name");
+
+        fetchGroupAlertDefinition = true; // fetch group alert def by default
+    }
+
+    @Override
+    public Class<AlertDefinition> getPersistentClass() {
+        return AlertDefinition.class;
+    }
+
+    public void addFilterId(Integer filterId) {
+        this.filterId = filterId;
+    }
+
+    public void addFilterIds(Integer... filterIds) {
+        this.filterIds = Arrays.asList(filterIds);
+    }
+
+    public void addFilterName(String filterName) {
+        this.filterName = filterName;
+    }
+
+    public void addFilterDescription(String filterDescription) {
+        this.filterDescription = filterDescription;
+    }
+
+    public void addFilterPriority(AlertPriority filterPriority) {
+        this.filterPriority = filterPriority;
+    }
+
+    public void addFilterAlertTemplateParentId(Integer filterAlertTemplateParentId) {
+        this.filterAlertTemplateParentId = filterAlertTemplateParentId;
+    }
+
+    public void addFilterAlertTemplateResourceTypeId(Integer filterAlertTemplateResourceTypeId) {
+        this.filterAlertTemplateResourceTypeId = filterAlertTemplateResourceTypeId;
+    }
+
+    public void addFilterAlertTemplateResourceTypeName(String filterAlertTemplateResourceTypeName) {
+        this.filterAlertTemplateResourceTypeName = filterAlertTemplateResourceTypeName;
+    }
+
+    public void addFilterResourceIds(Integer... filterResourceIds) {
+        this.filterResourceIds = Arrays.asList(filterResourceIds);
+    }
+
+    public void addFilterResourceGroupIds(Integer... filterResourceGroupIds) {
+        this.filterResourceGroupIds = Arrays.asList(filterResourceGroupIds);
+    }
+
+    public void addFilterEnabled(Boolean filterEnabled) {
+        this.filterEnabled = filterEnabled;
+    }
+
+    public void addFilterDeleted(Boolean filterDeleted) {
+        this.filterDeleted = filterDeleted;
+    }
+
+    public void addFilterResourceOnly(boolean filterResourceOnly) {
+        this.filterResourceOnly = (filterResourceOnly ? NonBindingOverrideFilter.ON : NonBindingOverrideFilter.OFF);
+    }
+
+    public void addFilterAlertTemplateOnly(boolean filterAlertTemplateOnly) {
+        this.filterAlertTemplateOnly = (filterAlertTemplateOnly ? NonBindingOverrideFilter.ON
+            : NonBindingOverrideFilter.OFF);
+    }
+
+    public void addFilterNotificationNames(String... notificationNames) {
+        fetchAlertNotifications(true);
+        this.filterNotificationSenderNames = Arrays.asList(notificationNames);
+    }
+
+    public void addFilterGroupAlertDefinitionId(Integer groupAlertDefinitionId) {
+        this.filterGroupAlertDefinitionId = groupAlertDefinitionId;
+    }
+    
+    public void fetchAlerts(boolean fetchAlerts) {
+        this.fetchAlerts = fetchAlerts;
+    }
+
+    public void fetchGroupAlertDefinition(boolean fetchGroupAlertDefinition) {
+        this.fetchGroupAlertDefinition = fetchGroupAlertDefinition;
+    }
+
+    public void fetchConditions(boolean fetchConditions) {
+        this.fetchConditions = fetchConditions;
+    }
+
+    public void fetchAlertNotifications(boolean fetchAlertNotifications) {
+        this.fetchAlertNotifications = fetchAlertNotifications;
+    }
+
+    public void fetchResource(boolean fetchResource) {
+        this.fetchResource = fetchResource;
+    }
+
+    public void fetchResourceType(boolean fetchResourceType) {
+        this.fetchResourceType = fetchResourceType;
+    }
+
+    public void addSortName(PageOrdering sortName) {
+        addSortField("name");
+        this.sortName = sortName;
+    }
+
+    public void addSortPriority(PageOrdering sortPriority) {
+        addSortField("priority");
+        this.sortPriority = sortPriority;
+    }
+
+    public boolean isTemplateCriteria() {
+        return null != filterAlertTemplateOnly //
+            || null != filterAlertTemplateParentId //
+            || null != filterAlertTemplateResourceTypeId //
+            || null != filterAlertTemplateResourceTypeName;
+
+    }
+
+    public boolean isGroupCriteria() {
+        return null != filterResourceGroupIds;
+    }
+
+    public void addSortResourceId(PageOrdering sortResourceId) {
+        addSortField(SORT_FIELD_RESOURCE_ID);
+        this.sortResourceId = sortResourceId;
+    }
+
+    public void addSortResourceName(PageOrdering sortResourceName) {
+        addSortField(SORT_FIELD_RESOURCE_NAME);
+        this.sortResourceName = sortResourceName;
+    }
+
+}

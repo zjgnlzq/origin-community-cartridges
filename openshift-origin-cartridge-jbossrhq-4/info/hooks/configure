@@ -157,6 +157,8 @@ ln -s ${JBOSS_CARTRIDGE_ROOT}/info/bin/standalone.conf $APP_JBOSS_BIN_DIR/standa
 
 cp ${JBOSS_CARTRIDGE_ROOT}/info/configuration/rhq-server.properties "$APP_JBOSS"/standalone/configuration
 
+mkdir -p "$APP_JBOSS"/../bin
+
 popd > /dev/null
 
 # Repo
@@ -185,9 +187,6 @@ if [ -f $concrete_configure ]; then
 fi
 
 populate_repo_dir
-
-# Copy the example WAR to the deployments directories
-cp ${JBOSS_CARTRIDGE_ROOT}/info/data/ROOT.war $APP_REPO_DIR/deployments
 
 chmod +x "$APP_JBOSS_BIN_DIR/standalone.sh" || error "Failed to chmod new application scripts" 122
 secure_app_dir

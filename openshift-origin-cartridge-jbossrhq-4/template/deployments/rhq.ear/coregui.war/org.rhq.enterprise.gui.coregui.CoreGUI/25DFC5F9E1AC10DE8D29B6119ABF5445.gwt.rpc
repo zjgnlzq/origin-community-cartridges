@@ -1,0 +1,395 @@
+[B, true, true, true, true, [B/3308590456, 3308590456
+com.google.gwt.event.shared.UmbrellaException, true, true, false, false, com.google.gwt.event.shared.UmbrellaException/3104463596, 3104463596
+com.google.gwt.http.client.RequestException, true, true, false, false, com.google.gwt.http.client.RequestException/190587325, 190587325
+com.google.gwt.json.client.JSONException, true, true, false, false, com.google.gwt.json.client.JSONException/2941795468, 2941795468
+com.google.gwt.jsonp.client.TimeoutException, true, true, false, false, com.google.gwt.jsonp.client.TimeoutException/1112787596, 1112787596
+com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException, true, true, true, true, com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException/3936916533, 3936916533
+com.google.gwt.user.client.rpc.InvocationException, true, false, false, false, com.google.gwt.user.client.rpc.InvocationException/1510557512, 1510557512
+com.google.gwt.user.client.rpc.RpcTokenException, true, true, false, false, com.google.gwt.user.client.rpc.RpcTokenException/2345075298, 2345075298
+com.google.gwt.user.client.rpc.SerializableException, true, true, false, false, com.google.gwt.user.client.rpc.SerializableException/3047383460, 3047383460
+com.google.gwt.user.client.rpc.SerializationException, true, true, false, false, com.google.gwt.user.client.rpc.SerializationException/2836333220, 2836333220
+com.google.gwt.user.client.rpc.SerializedTypeViolationException, true, true, false, false, com.google.gwt.user.client.rpc.SerializedTypeViolationException/914601580, 914601580
+com.google.gwt.user.client.rpc.ServiceDefTarget$NoServiceEntryPointSpecifiedException, true, true, false, false, com.google.gwt.user.client.rpc.ServiceDefTarget$NoServiceEntryPointSpecifiedException/3408313447, 3408313447
+com.google.gwt.user.client.rpc.XsrfToken, false, false, true, true, com.google.gwt.user.client.rpc.XsrfToken/4254043109, 4254043109
+com.google.gwt.xml.client.DOMException, true, false, false, false, com.google.gwt.xml.client.DOMException/4182906963, 4182906963
+com.google.gwt.xml.client.impl.DOMParseException, true, true, false, false, com.google.gwt.xml.client.impl.DOMParseException/3799120635, 3799120635
+com.google.web.bindery.event.shared.UmbrellaException, true, true, false, false, com.google.web.bindery.event.shared.UmbrellaException/1025846929, 1025846929
+java.io.IOException, true, true, false, false, java.io.IOException/1159940531, 1159940531
+java.io.UnsupportedEncodingException, true, true, false, false, java.io.UnsupportedEncodingException/1526756933, 1526756933
+java.lang.ArithmeticException, true, true, false, false, java.lang.ArithmeticException/1539622151, 1539622151
+java.lang.ArrayIndexOutOfBoundsException, true, true, false, false, java.lang.ArrayIndexOutOfBoundsException/600550433, 600550433
+java.lang.ArrayStoreException, true, true, false, false, java.lang.ArrayStoreException/3540507190, 3540507190
+java.lang.AssertionError, true, true, false, false, java.lang.AssertionError/3490171458, 3490171458
+java.lang.Boolean, true, true, true, true, java.lang.Boolean/476441737, 476441737
+java.lang.ClassCastException, true, true, false, false, java.lang.ClassCastException/702295179, 702295179
+java.lang.Double, true, true, true, true, java.lang.Double/858496421, 858496421
+java.lang.Error, true, true, false, false, java.lang.Error/1331973429, 1331973429
+java.lang.Exception, true, true, true, false, java.lang.Exception/1920171873, 1920171873
+java.lang.IllegalArgumentException, true, true, false, false, java.lang.IllegalArgumentException/1755012560, 1755012560
+java.lang.IllegalStateException, true, true, false, false, java.lang.IllegalStateException/1972187323, 1972187323
+java.lang.IndexOutOfBoundsException, true, true, false, false, java.lang.IndexOutOfBoundsException/2489527753, 2489527753
+java.lang.Integer, true, true, true, true, java.lang.Integer/3438268394, 3438268394
+java.lang.Long, true, true, true, true, java.lang.Long/4227064769, 4227064769
+java.lang.NegativeArraySizeException, true, true, false, false, java.lang.NegativeArraySizeException/3846860241, 3846860241
+java.lang.NoSuchMethodException, true, true, false, false, java.lang.NoSuchMethodException/260969707, 260969707
+java.lang.NullPointerException, true, true, false, false, java.lang.NullPointerException/1463492344, 1463492344
+java.lang.Number, true, false, true, false, java.lang.Number/300033342, 300033342
+java.lang.NumberFormatException, true, true, false, false, java.lang.NumberFormatException/3305228476, 3305228476
+java.lang.RuntimeException, true, true, true, false, java.lang.RuntimeException/515124647, 515124647
+java.lang.String, true, true, true, true, java.lang.String/2004016611, 2004016611
+java.lang.StringIndexOutOfBoundsException, true, true, false, false, java.lang.StringIndexOutOfBoundsException/500777603, 500777603
+[Ljava.lang.String;, false, false, true, true, [Ljava.lang.String;/2600011424, 2600011424
+java.lang.Throwable, true, true, true, false, java.lang.Throwable/2953622131, 2953622131
+java.lang.UnsupportedOperationException, true, true, false, false, java.lang.UnsupportedOperationException/3744010015, 3744010015
+java.lang.annotation.AnnotationFormatError, true, true, false, false, java.lang.annotation.AnnotationFormatError/2257184627, 2257184627
+java.lang.annotation.AnnotationTypeMismatchException, true, true, false, false, java.lang.annotation.AnnotationTypeMismatchException/976205828, 976205828
+java.security.DigestException, true, true, false, false, java.security.DigestException/629316798, 629316798
+java.security.GeneralSecurityException, true, true, false, false, java.security.GeneralSecurityException/2669239907, 2669239907
+java.security.NoSuchAlgorithmException, true, true, false, false, java.security.NoSuchAlgorithmException/2892037213, 2892037213
+java.util.ArrayList, true, true, true, true, java.util.ArrayList/4159755760, 4159755760
+java.util.Arrays$ArrayList, true, true, true, true, java.util.Arrays$ArrayList/2507071751, 2507071751
+java.util.Collections$EmptyList, true, true, true, true, java.util.Collections$EmptyList/4157118744, 4157118744
+java.util.Collections$EmptyMap, true, true, true, true, java.util.Collections$EmptyMap/4174664486, 4174664486
+java.util.Collections$EmptySet, true, true, true, true, java.util.Collections$EmptySet/3523698179, 3523698179
+java.util.Collections$SingletonList, true, true, true, true, java.util.Collections$SingletonList/1586180994, 1586180994
+java.util.ConcurrentModificationException, true, true, false, false, java.util.ConcurrentModificationException/2717383897, 2717383897
+java.util.EmptyStackException, true, true, false, false, java.util.EmptyStackException/89438517, 89438517
+java.util.HashMap, true, true, true, true, java.util.HashMap/1797211028, 1797211028
+java.util.HashSet, true, true, true, true, java.util.HashSet/3273092938, 3273092938
+java.util.IdentityHashMap, true, true, true, true, java.util.IdentityHashMap/1839153020, 1839153020
+java.util.LinkedHashMap, true, true, true, true, java.util.LinkedHashMap/3008245022, 3008245022
+java.util.LinkedHashSet, true, true, true, true, java.util.LinkedHashSet/1826081506, 1826081506
+java.util.LinkedList, true, true, true, true, java.util.LinkedList/3953877921, 3953877921
+java.util.NoSuchElementException, true, true, false, false, java.util.NoSuchElementException/1559248883, 1559248883
+java.util.Stack, true, true, true, true, java.util.Stack/1346942793, 1346942793
+java.util.TooManyListenersException, true, true, false, false, java.util.TooManyListenersException/2023078032, 2023078032
+java.util.TreeMap, true, true, true, true, java.util.TreeMap/1493889780, 1493889780
+java.util.TreeSet, true, true, true, true, java.util.TreeSet/4043497002, 4043497002
+java.util.Vector, true, true, true, true, java.util.Vector/3057315478, 3057315478
+javax.validation.ConstraintDeclarationException, true, true, false, false, javax.validation.ConstraintDeclarationException/3610544007, 3610544007
+javax.validation.ConstraintDefinitionException, true, true, false, false, javax.validation.ConstraintDefinitionException/3732439488, 3732439488
+javax.validation.ConstraintViolationException, true, true, false, false, javax.validation.ConstraintViolationException/1185386591, 1185386591
+javax.validation.GroupDefinitionException, true, true, false, false, javax.validation.GroupDefinitionException/4024780846, 4024780846
+javax.validation.UnexpectedTypeException, true, true, false, false, javax.validation.UnexpectedTypeException/593026390, 593026390
+javax.validation.ValidationException, true, true, false, false, javax.validation.ValidationException/1570221831, 1570221831
+org.rhq.core.domain.alert.Alert, true, true, true, true, org.rhq.core.domain.alert.Alert/3680804385, 3680804385
+@ClientFields,org.rhq.core.domain.alert.Alert,id,ctime,alertDefinition,conditionLogs,alertNotificationLogs,recoveryId,recoveryAlertDefinition,willRecover,acknowledgeTime,acknowledgingSubject
+org.rhq.core.domain.alert.AlertCondition, true, true, true, true, org.rhq.core.domain.alert.AlertCondition/3582060383, 3582060383
+@ClientFields,org.rhq.core.domain.alert.AlertCondition,id,category,measurementDefinition,name,comparator,threshold,option,triggerId,alertDefinition,conditionLogs
+org.rhq.core.domain.alert.AlertConditionCategory, true, true, true, true, org.rhq.core.domain.alert.AlertConditionCategory/732929936, 732929936
+org.rhq.core.domain.alert.AlertConditionLog, true, true, true, true, org.rhq.core.domain.alert.AlertConditionLog/188964283, 188964283
+@ClientFields,org.rhq.core.domain.alert.AlertConditionLog,id,ctime,value,alert,condition
+[Lorg.rhq.core.domain.alert.AlertCondition;, true, true, true, true, [Lorg.rhq.core.domain.alert.AlertCondition;/2167631691, 2167631691
+org.rhq.core.domain.alert.AlertDampening, true, true, true, true, org.rhq.core.domain.alert.AlertDampening/2543338577, 2543338577
+org.rhq.core.domain.alert.AlertDampening$Category, true, true, true, true, org.rhq.core.domain.alert.AlertDampening$Category/3078582666, 3078582666
+org.rhq.core.domain.alert.AlertDampening$TimeUnits, true, true, true, true, org.rhq.core.domain.alert.AlertDampening$TimeUnits/3289809756, 3289809756
+org.rhq.core.domain.alert.AlertDampeningEvent, true, true, true, true, org.rhq.core.domain.alert.AlertDampeningEvent/3793738558, 3793738558
+@ClientFields,org.rhq.core.domain.alert.AlertDampeningEvent,id,alertDefinition,eventType,eventTime
+org.rhq.core.domain.alert.AlertDampeningEvent$Type, true, true, true, true, org.rhq.core.domain.alert.AlertDampeningEvent$Type/420016271, 420016271
+org.rhq.core.domain.alert.AlertDefinition, true, true, true, true, org.rhq.core.domain.alert.AlertDefinition/2578791111, 2578791111
+@ClientFields,org.rhq.core.domain.alert.AlertDefinition,id,name,ctime,mtime,parentId,groupAlertDefinition,groupAlertDefinitionChildren,description,priority,resourceType,resource,resourceGroup,enabled,alertDampening,recoveryId,willRecover,notifyFiltered,controlFiltered,deleted,readOnly,conditionExpression,conditions,alertNotifications,alerts
+org.rhq.core.domain.alert.AlertPriority, true, true, true, true, org.rhq.core.domain.alert.AlertPriority/3133369790, 3133369790
+org.rhq.core.domain.alert.BooleanExpression, true, true, true, true, org.rhq.core.domain.alert.BooleanExpression/2969111079, 2969111079
+org.rhq.core.domain.alert.notification.AlertNotification, true, true, true, true, org.rhq.core.domain.alert.notification.AlertNotification/3298883744, 3298883744
+@ClientFields,org.rhq.core.domain.alert.notification.AlertNotification,id,alertDefinition,configuration,extraConfiguration,senderName
+org.rhq.core.domain.alert.notification.AlertNotificationLog, true, true, true, true, org.rhq.core.domain.alert.notification.AlertNotificationLog/2543935847, 2543935847
+@ClientFields,org.rhq.core.domain.alert.notification.AlertNotificationLog,id,alert,sender,resultState,message
+[Lorg.rhq.core.domain.alert.notification.AlertNotificationLog;, true, true, true, true, [Lorg.rhq.core.domain.alert.notification.AlertNotificationLog;/350427866, 350427866
+[Lorg.rhq.core.domain.alert.notification.AlertNotification;, true, true, true, true, [Lorg.rhq.core.domain.alert.notification.AlertNotification;/3072461142, 3072461142
+org.rhq.core.domain.alert.notification.ResultState, true, true, true, true, org.rhq.core.domain.alert.notification.ResultState/3934021431, 3934021431
+org.rhq.core.domain.auth.Subject, true, true, true, true, org.rhq.core.domain.auth.Subject/2142285947, 2142285947
+@ClientFields,org.rhq.core.domain.auth.Subject,id,name,firstName,lastName,emailAddress,smsAddress,phoneNumber,department,factive,fsystem,configuration,roles,ldapRoles,ownedGroups,ownedRepos,ownedDashboards,sessionId
+org.rhq.core.domain.authz.Permission, true, true, true, true, org.rhq.core.domain.authz.Permission/1442357263, 1442357263
+[Lorg.rhq.core.domain.authz.Permission;, false, false, true, true, [Lorg.rhq.core.domain.authz.Permission;/4248477598, 4248477598
+org.rhq.core.domain.authz.Role, true, true, true, true, org.rhq.core.domain.authz.Role/778387136, 778387136
+@ClientFields,org.rhq.core.domain.authz.Role,id,name,description,fsystem,subjects,ldapSubjects,ldapGroups,resourceGroups,permissions
+org.rhq.core.domain.bundle.Bundle, true, true, true, true, org.rhq.core.domain.bundle.Bundle/3198028616, 3198028616
+@ClientFields,org.rhq.core.domain.bundle.Bundle,id,name,description,bundleType,repo,packageType,destinations,bundleVersions,tags
+org.rhq.core.domain.bundle.BundleDeployment, true, true, true, true, org.rhq.core.domain.bundle.BundleDeployment/2937857671, 2937857671
+@ClientFields,org.rhq.core.domain.bundle.BundleDeployment,id,name,description,status,errorMessage,subjectName,isLive,ctime,mtime,replacedBundleDeploymentId,configuration,bundleVersion,destination,resourceDeployments,tags
+org.rhq.core.domain.bundle.BundleDeploymentStatus, true, true, true, true, org.rhq.core.domain.bundle.BundleDeploymentStatus/3085291947, 3085291947
+[Lorg.rhq.core.domain.bundle.BundleDeployment;, true, true, true, true, [Lorg.rhq.core.domain.bundle.BundleDeployment;/2643992371, 2643992371
+org.rhq.core.domain.bundle.BundleDestination, true, true, true, true, org.rhq.core.domain.bundle.BundleDestination/636493047, 636493047
+@ClientFields,org.rhq.core.domain.bundle.BundleDestination,id,name,description,deployDir,destinationBaseDirectoryName,ctime,mtime,bundle,group,deployments,tags
+[Lorg.rhq.core.domain.bundle.BundleDestination;, true, true, true, true, [Lorg.rhq.core.domain.bundle.BundleDestination;/1725390180, 1725390180
+org.rhq.core.domain.bundle.BundleFile, true, true, true, true, org.rhq.core.domain.bundle.BundleFile/2382460540, 2382460540
+@ClientFields,org.rhq.core.domain.bundle.BundleFile,id,bundleVersion,packageVersion
+[Lorg.rhq.core.domain.bundle.BundleFile;, true, true, true, true, [Lorg.rhq.core.domain.bundle.BundleFile;/1933448154, 1933448154
+org.rhq.core.domain.bundle.BundleResourceDeployment, true, true, true, true, org.rhq.core.domain.bundle.BundleResourceDeployment/2578322293, 2578322293
+@ClientFields,org.rhq.core.domain.bundle.BundleResourceDeployment,id,bundleDeployment,resource,status,ctime,histories
+org.rhq.core.domain.bundle.BundleResourceDeploymentHistory, true, true, true, true, org.rhq.core.domain.bundle.BundleResourceDeploymentHistory/338379292, 338379292
+@ClientFields,org.rhq.core.domain.bundle.BundleResourceDeploymentHistory,id,resourceDeployment,subjectName,auditTime,action,info,category,status,message,attachment
+org.rhq.core.domain.bundle.BundleResourceDeploymentHistory$Category, true, true, true, true, org.rhq.core.domain.bundle.BundleResourceDeploymentHistory$Category/4055645863, 4055645863
+org.rhq.core.domain.bundle.BundleResourceDeploymentHistory$Status, true, true, true, true, org.rhq.core.domain.bundle.BundleResourceDeploymentHistory$Status/2628613814, 2628613814
+[Lorg.rhq.core.domain.bundle.BundleResourceDeploymentHistory;, true, true, true, true, [Lorg.rhq.core.domain.bundle.BundleResourceDeploymentHistory;/96954269, 96954269
+[Lorg.rhq.core.domain.bundle.BundleResourceDeployment;, true, true, true, true, [Lorg.rhq.core.domain.bundle.BundleResourceDeployment;/2612215760, 2612215760
+org.rhq.core.domain.bundle.BundleType, true, true, true, true, org.rhq.core.domain.bundle.BundleType/1514209875, 1514209875
+@ClientFields,org.rhq.core.domain.bundle.BundleType,id,name,resourceType
+org.rhq.core.domain.bundle.BundleVersion, true, true, true, true, org.rhq.core.domain.bundle.BundleVersion/1487029442, 1487029442
+@ClientFields,org.rhq.core.domain.bundle.BundleVersion,id,name,description,version,versionOrder,recipe,bundle,configurationDefinition,bundleDeployments,bundleFiles,tags
+[Lorg.rhq.core.domain.bundle.BundleVersion;, true, true, true, true, [Lorg.rhq.core.domain.bundle.BundleVersion;/2627914943, 2627914943
+org.rhq.core.domain.cloud.AffinityGroup, true, true, true, true, org.rhq.core.domain.cloud.AffinityGroup/2535509485, 2535509485
+@ClientFields,org.rhq.core.domain.cloud.AffinityGroup,id,name,servers,agents
+org.rhq.core.domain.cloud.Server, true, true, true, true, org.rhq.core.domain.cloud.Server/2668048662, 2668048662
+@ClientFields,org.rhq.core.domain.cloud.Server,id,name,address,port,securePort,operationMode,computePower,ctime,mtime,affinityGroup,agents,status
+org.rhq.core.domain.cloud.Server$OperationMode, true, true, true, true, org.rhq.core.domain.cloud.Server$OperationMode/2202107077, 2202107077
+[Lorg.rhq.core.domain.cloud.Server;, true, true, true, true, [Lorg.rhq.core.domain.cloud.Server;/2885472760, 2885472760
+org.rhq.core.domain.configuration.AbstractConfigurationUpdate, true, false, true, false, org.rhq.core.domain.configuration.AbstractConfigurationUpdate/1748588383, 1748588383
+org.rhq.core.domain.configuration.AbstractResourceConfigurationUpdate, true, false, true, false, org.rhq.core.domain.configuration.AbstractResourceConfigurationUpdate/253969533, 253969533
+@ClientFields,org.rhq.core.domain.configuration.AbstractResourceConfigurationUpdate,id
+org.rhq.core.domain.configuration.Configuration, true, true, true, true, org.rhq.core.domain.configuration.Configuration/25349161, 25349161
+@ClientFields,org.rhq.core.domain.configuration.Configuration,id,properties,rawConfigurations,notes,version,ctime,mtime
+org.rhq.core.domain.configuration.ConfigurationUpdateStatus, true, true, true, true, org.rhq.core.domain.configuration.ConfigurationUpdateStatus/23684723, 23684723
+org.rhq.core.domain.configuration.ObfuscatedPropertySimple, true, true, true, true, org.rhq.core.domain.configuration.ObfuscatedPropertySimple/1470168711, 1470168711
+[Lorg.rhq.core.domain.configuration.ObfuscatedPropertySimple;, true, true, true, true, [Lorg.rhq.core.domain.configuration.ObfuscatedPropertySimple;/3504683049, 3504683049
+org.rhq.core.domain.configuration.PluginConfigurationUpdate, true, true, true, true, org.rhq.core.domain.configuration.PluginConfigurationUpdate/4042217757, 4042217757
+@ClientFields,org.rhq.core.domain.configuration.PluginConfigurationUpdate,resource,groupConfigurationUpdate
+[Lorg.rhq.core.domain.configuration.PluginConfigurationUpdate;, true, true, true, true, [Lorg.rhq.core.domain.configuration.PluginConfigurationUpdate;/2325625913, 2325625913
+org.rhq.core.domain.configuration.Property, true, true, true, true, org.rhq.core.domain.configuration.Property/1616546008, 1616546008
+@ClientFields,org.rhq.core.domain.configuration.Property,id,configuration,name,errorMessage,parentList,parentMap
+org.rhq.core.domain.configuration.PropertyDefinitionDynamic, true, true, true, true, org.rhq.core.domain.configuration.PropertyDefinitionDynamic/1814887424, 1814887424
+@ClientFields,org.rhq.core.domain.configuration.PropertyDefinitionDynamic,dynamicType,key
+org.rhq.core.domain.configuration.PropertyDynamicType, true, true, true, true, org.rhq.core.domain.configuration.PropertyDynamicType/1531466778, 1531466778
+org.rhq.core.domain.configuration.PropertyList, true, true, true, true, org.rhq.core.domain.configuration.PropertyList/3894047256, 3894047256
+@ClientFields,org.rhq.core.domain.configuration.PropertyList,list,memberPropertyName
+org.rhq.core.domain.configuration.PropertyMap, true, true, true, true, org.rhq.core.domain.configuration.PropertyMap/2096336716, 2096336716
+@ClientFields,org.rhq.core.domain.configuration.PropertyMap,map
+org.rhq.core.domain.configuration.PropertySimple, true, true, true, true, org.rhq.core.domain.configuration.PropertySimple/4089167759, 4089167759
+@ClientFields,org.rhq.core.domain.configuration.PropertySimple,stringValue,override
+[Lorg.rhq.core.domain.configuration.PropertySimple;, true, true, true, true, [Lorg.rhq.core.domain.configuration.PropertySimple;/1023405955, 1023405955
+[Lorg.rhq.core.domain.configuration.Property;, true, true, true, true, [Lorg.rhq.core.domain.configuration.Property;/2281104159, 2281104159
+org.rhq.core.domain.configuration.RawConfiguration, true, true, true, true, org.rhq.core.domain.configuration.RawConfiguration/2708391084, 2708391084
+@ClientFields,org.rhq.core.domain.configuration.RawConfiguration,id,path,contents,sha256,ctime,mtime,configuration,errorMessage
+org.rhq.core.domain.configuration.ResourceConfigurationUpdate, true, true, true, true, org.rhq.core.domain.configuration.ResourceConfigurationUpdate/873538670, 873538670
+@ClientFields,org.rhq.core.domain.configuration.ResourceConfigurationUpdate,resource,groupConfigurationUpdate
+[Lorg.rhq.core.domain.configuration.ResourceConfigurationUpdate;, true, true, true, true, [Lorg.rhq.core.domain.configuration.ResourceConfigurationUpdate;/1414041323, 1414041323
+org.rhq.core.domain.configuration.definition.ActivationPolicy, true, true, true, true, org.rhq.core.domain.configuration.definition.ActivationPolicy/965726381, 965726381
+org.rhq.core.domain.configuration.definition.ConfigurationDefinition, true, true, true, true, org.rhq.core.domain.configuration.definition.ConfigurationDefinition/2343178246, 2343178246
+@ClientFields,org.rhq.core.domain.configuration.definition.ConfigurationDefinition,id,name,description,propertyDefinitions,templates,configurationFormat
+org.rhq.core.domain.configuration.definition.ConfigurationFormat, true, true, true, true, org.rhq.core.domain.configuration.definition.ConfigurationFormat/3666220628, 3666220628
+org.rhq.core.domain.configuration.definition.ConfigurationTemplate, true, true, true, true, org.rhq.core.domain.configuration.definition.ConfigurationTemplate/2266193370, 2266193370
+@ClientFields,org.rhq.core.domain.configuration.definition.ConfigurationTemplate,id,name,description,configuration,configurationDefinition,isDefault
+org.rhq.core.domain.configuration.definition.PropertyDefinition, true, true, true, true, org.rhq.core.domain.configuration.definition.PropertyDefinition/1743186407, 1743186407
+@ClientFields,org.rhq.core.domain.configuration.definition.PropertyDefinition,id,name,displayName,description,required,readOnly,summary,activationPolicy,propertyGroupDefinition,order,version,configurationDefinition,parentPropertyListDefinition,parentPropertyMapDefinition
+org.rhq.core.domain.configuration.definition.PropertyDefinitionEnumeration, true, true, true, true, org.rhq.core.domain.configuration.definition.PropertyDefinitionEnumeration/2392068519, 2392068519
+@ClientFields,org.rhq.core.domain.configuration.definition.PropertyDefinitionEnumeration,id,name,value,orderIndex,propertyDefinitionSimple
+[Lorg.rhq.core.domain.configuration.definition.PropertyDefinitionEnumeration;, true, true, true, true, [Lorg.rhq.core.domain.configuration.definition.PropertyDefinitionEnumeration;/3268069712, 3268069712
+org.rhq.core.domain.configuration.definition.PropertyDefinitionList, true, true, true, true, org.rhq.core.domain.configuration.definition.PropertyDefinitionList/4150884192, 4150884192
+@ClientFields,org.rhq.core.domain.configuration.definition.PropertyDefinitionList,min,max,memberDefinition
+org.rhq.core.domain.configuration.definition.PropertyDefinitionMap, true, true, true, true, org.rhq.core.domain.configuration.definition.PropertyDefinitionMap/2538219759, 2538219759
+@ClientFields,org.rhq.core.domain.configuration.definition.PropertyDefinitionMap,map
+org.rhq.core.domain.configuration.definition.PropertyDefinitionSimple, true, true, true, true, org.rhq.core.domain.configuration.definition.PropertyDefinitionSimple/1422701070, 1422701070
+@ClientFields,org.rhq.core.domain.configuration.definition.PropertyDefinitionSimple,type,allowCustomEnumeratedValue,constraints,enumeratedValues,defaultValue,units,optionsSource
+org.rhq.core.domain.configuration.definition.PropertyGroupDefinition, true, true, true, true, org.rhq.core.domain.configuration.definition.PropertyGroupDefinition/4145857662, 4145857662
+@ClientFields,org.rhq.core.domain.configuration.definition.PropertyGroupDefinition,id,name,displayName,description,defaultHidden,order
+org.rhq.core.domain.configuration.definition.PropertyOptionsSource, true, true, true, true, org.rhq.core.domain.configuration.definition.PropertyOptionsSource/2788574542, 2788574542
+@ClientFields,org.rhq.core.domain.configuration.definition.PropertyOptionsSource,id,linkToTarget,filter,expression,targetType,propertyDefinition
+org.rhq.core.domain.configuration.definition.PropertyOptionsSource$TargetType, true, true, true, true, org.rhq.core.domain.configuration.definition.PropertyOptionsSource$TargetType/1692675520, 1692675520
+[Lorg.rhq.core.domain.configuration.definition.PropertyOptionsSource;, true, true, true, true, [Lorg.rhq.core.domain.configuration.definition.PropertyOptionsSource;/1680648324, 1680648324
+org.rhq.core.domain.configuration.definition.PropertySimpleType, true, true, true, true, org.rhq.core.domain.configuration.definition.PropertySimpleType/2990894854, 2990894854
+org.rhq.core.domain.configuration.definition.constraint.Constraint, true, false, true, false, org.rhq.core.domain.configuration.definition.constraint.Constraint/686700589, 686700589
+@ClientFields,org.rhq.core.domain.configuration.definition.constraint.Constraint,id,details,propertyDefinitionSimple
+org.rhq.core.domain.configuration.definition.constraint.FloatRangeConstraint, true, true, true, true, org.rhq.core.domain.configuration.definition.constraint.FloatRangeConstraint/3889191999, 3889191999
+@ClientFields,org.rhq.core.domain.configuration.definition.constraint.FloatRangeConstraint,minimum,maximum
+org.rhq.core.domain.configuration.definition.constraint.IntegerRangeConstraint, true, true, true, true, org.rhq.core.domain.configuration.definition.constraint.IntegerRangeConstraint/2783245727, 2783245727
+@ClientFields,org.rhq.core.domain.configuration.definition.constraint.IntegerRangeConstraint,minimum,maximum
+org.rhq.core.domain.configuration.definition.constraint.RegexConstraint, true, true, true, true, org.rhq.core.domain.configuration.definition.constraint.RegexConstraint/437362199, 437362199
+@ClientFields,org.rhq.core.domain.configuration.definition.constraint.RegexConstraint
+org.rhq.core.domain.configuration.group.AbstractGroupConfigurationUpdate, true, false, true, false, org.rhq.core.domain.configuration.group.AbstractGroupConfigurationUpdate/1673833325, 1673833325
+@ClientFields,org.rhq.core.domain.configuration.group.AbstractGroupConfigurationUpdate,id,group
+[Lorg.rhq.core.domain.configuration.group.AbstractGroupConfigurationUpdate;, true, true, true, true, [Lorg.rhq.core.domain.configuration.group.AbstractGroupConfigurationUpdate;/902172491, 902172491
+org.rhq.core.domain.configuration.group.GroupPluginConfigurationUpdate, true, true, true, true, org.rhq.core.domain.configuration.group.GroupPluginConfigurationUpdate/2456576182, 2456576182
+@ClientFields,org.rhq.core.domain.configuration.group.GroupPluginConfigurationUpdate,configurationUpdates
+[Lorg.rhq.core.domain.configuration.group.GroupPluginConfigurationUpdate;, true, true, true, true, [Lorg.rhq.core.domain.configuration.group.GroupPluginConfigurationUpdate;/3693785257, 3693785257
+org.rhq.core.domain.configuration.group.GroupResourceConfigurationUpdate, true, true, true, true, org.rhq.core.domain.configuration.group.GroupResourceConfigurationUpdate/514292133, 514292133
+@ClientFields,org.rhq.core.domain.configuration.group.GroupResourceConfigurationUpdate,configurationUpdates
+[Lorg.rhq.core.domain.configuration.group.GroupResourceConfigurationUpdate;, true, true, true, true, [Lorg.rhq.core.domain.configuration.group.GroupResourceConfigurationUpdate;/771791097, 771791097
+org.rhq.core.domain.content.Advisory, true, true, true, true, org.rhq.core.domain.content.Advisory/31828033, 31828033
+@ClientFields,org.rhq.core.domain.content.Advisory,id,advisory,advisoryType,advisory_rel,advisory_name,description,synopsis,topic,solution,severity,issue_date,update_date,ctime,lastModifiedDate,advisorypkgs,advisorybugs
+org.rhq.core.domain.content.AdvisoryBuglist, true, true, true, true, org.rhq.core.domain.content.AdvisoryBuglist/859134265, 859134265
+@ClientFields,org.rhq.core.domain.content.AdvisoryBuglist,id,advisory,bugid,lastModifiedDate
+org.rhq.core.domain.content.AdvisoryPackage, true, true, true, true, org.rhq.core.domain.content.AdvisoryPackage/634549372, 634549372
+@ClientFields,org.rhq.core.domain.content.AdvisoryPackage,id,advisory,pkg,lastModifiedDate
+org.rhq.core.domain.content.Architecture, true, true, true, true, org.rhq.core.domain.content.Architecture/3628471854, 3628471854
+@ClientFields,org.rhq.core.domain.content.Architecture,id,name
+org.rhq.core.domain.content.ContentRequestStatus, true, true, true, true, org.rhq.core.domain.content.ContentRequestStatus/3251318814, 3251318814
+org.rhq.core.domain.content.ContentRequestType, true, true, true, true, org.rhq.core.domain.content.ContentRequestType/2359775833, 2359775833
+org.rhq.core.domain.content.ContentServiceRequest, true, true, true, true, org.rhq.core.domain.content.ContentServiceRequest/2472282631, 2472282631
+@ClientFields,org.rhq.core.domain.content.ContentServiceRequest,id,resource,status,errorMessage,notes,subjectName,ctime,mtime,contentRequestType,installedPackageHistory
+[Lorg.rhq.core.domain.content.ContentServiceRequest;, true, true, true, true, [Lorg.rhq.core.domain.content.ContentServiceRequest;/2820129562, 2820129562
+org.rhq.core.domain.content.ContentSource, true, true, true, true, org.rhq.core.domain.content.ContentSource/3026819646, 3026819646
+@ClientFields,org.rhq.core.domain.content.ContentSource,id,contentSourceType,name,description,lazyLoad,downloadMode,syncSchedule,loadErrorMessage,configuration,creationDate,lastModifiedDate,syncResults,repoContentSources
+org.rhq.core.domain.content.ContentSourceSyncResults, true, true, true, true, org.rhq.core.domain.content.ContentSourceSyncResults/4202887317, 4202887317
+@ClientFields,org.rhq.core.domain.content.ContentSourceSyncResults,id,contentSource,status,startTime,endTime,results
+[Lorg.rhq.core.domain.content.ContentSourceSyncResults;, true, true, true, true, [Lorg.rhq.core.domain.content.ContentSourceSyncResults;/3088417198, 3088417198
+org.rhq.core.domain.content.ContentSourceType, true, true, true, true, org.rhq.core.domain.content.ContentSourceType/2533543398, 2533543398
+@ClientFields,org.rhq.core.domain.content.ContentSourceType,id,name,displayName,description,pluginName,defaultLazyLoad,defaultDownloadMode,defaultSyncSchedule,contentSourceConfigurationDefinition,contentSourceApiClass,contentSources
+org.rhq.core.domain.content.ContentSyncStatus, true, true, true, true, org.rhq.core.domain.content.ContentSyncStatus/211493742, 211493742
+org.rhq.core.domain.content.Distribution, true, true, true, true, org.rhq.core.domain.content.Distribution/2004966069, 2004966069
+@ClientFields,org.rhq.core.domain.content.Distribution,id,distributionType,label,basePath,lastModifiedDate,distributionFiles
+org.rhq.core.domain.content.DistributionType, true, true, true, true, org.rhq.core.domain.content.DistributionType/3880076577, 3880076577
+@ClientFields,org.rhq.core.domain.content.DistributionType,id,name,description
+org.rhq.core.domain.content.DownloadMode, true, true, true, true, org.rhq.core.domain.content.DownloadMode/3083336366, 3083336366
+org.rhq.core.domain.content.InstalledPackage, true, true, true, true, org.rhq.core.domain.content.InstalledPackage/1874072558, 1874072558
+@ClientFields,org.rhq.core.domain.content.InstalledPackage,id,resource,packageVersion,installationDate,user
+org.rhq.core.domain.content.InstalledPackageHistory, true, true, true, true, org.rhq.core.domain.content.InstalledPackageHistory/3116883777, 3116883777
+@ClientFields,org.rhq.core.domain.content.InstalledPackageHistory,id,packageVersion,status,errorMessage,timestamp,deploymentConfigurationValues,installationSteps,resource,contentServiceRequest
+org.rhq.core.domain.content.InstalledPackageHistoryStatus, true, true, true, true, org.rhq.core.domain.content.InstalledPackageHistoryStatus/1998064969, 1998064969
+[Lorg.rhq.core.domain.content.InstalledPackageHistory;, true, true, true, true, [Lorg.rhq.core.domain.content.InstalledPackageHistory;/3117915719, 3117915719
+org.rhq.core.domain.content.Package, true, true, true, true, org.rhq.core.domain.content.Package/1468621874, 1468621874
+@ClientFields,org.rhq.core.domain.content.Package,id,packageType,name,classification,versions
+org.rhq.core.domain.content.PackageBits, true, true, true, true, org.rhq.core.domain.content.PackageBits/1223693023, 1223693023
+@ClientFields,org.rhq.core.domain.content.PackageBits,id,blob
+org.rhq.core.domain.content.PackageBitsBlob, true, true, true, true, org.rhq.core.domain.content.PackageBitsBlob/460726052, 460726052
+@ClientFields,org.rhq.core.domain.content.PackageBitsBlob,id,bits
+org.rhq.core.domain.content.PackageCategory, true, true, true, true, org.rhq.core.domain.content.PackageCategory/1473445532, 1473445532
+org.rhq.core.domain.content.PackageInstallationStep, true, true, true, true, org.rhq.core.domain.content.PackageInstallationStep/921229985, 921229985
+@ClientFields,org.rhq.core.domain.content.PackageInstallationStep,id,key,order,description,errorMessage,result,installedPackageHistory
+[Lorg.rhq.core.domain.content.PackageInstallationStep;, true, true, true, true, [Lorg.rhq.core.domain.content.PackageInstallationStep;/1590296897, 1590296897
+org.rhq.core.domain.content.PackageType, true, true, true, true, org.rhq.core.domain.content.PackageType/1332663421, 1332663421
+@ClientFields,org.rhq.core.domain.content.PackageType,id,name,displayName,description,category,discoveryInterval,isCreationData,supportsArchitecture,deploymentConfigurationDefinition,packageExtraPropertiesDefinition,packages,resourceType
+org.rhq.core.domain.content.PackageVersion, true, true, true, true, org.rhq.core.domain.content.PackageVersion/3029199578, 3029199578
+@ClientFields,org.rhq.core.domain.content.PackageVersion,id,generalPackage,displayName,shortDescription,longDescription,version,displayVersion,architecture,fileName,fileSize,md5,sha256,fileCreatedDate,licenseName,licenseVersion,metadata,extraProperties,repoPackageVersions,installedPackages,installedPackageHistory,packageBits,productVersionPackageVersions
+org.rhq.core.domain.content.PackageVersion$DefaultPackageVersionComparator, true, true, true, true, org.rhq.core.domain.content.PackageVersion$DefaultPackageVersionComparator/1813820431, 1813820431
+[Lorg.rhq.core.domain.content.PackageVersion;, true, true, true, true, [Lorg.rhq.core.domain.content.PackageVersion;/2263270277, 2263270277
+org.rhq.core.domain.content.ProductVersionPackageVersion, true, true, true, true, org.rhq.core.domain.content.ProductVersionPackageVersion/2448417258, 2448417258
+@ClientFields,org.rhq.core.domain.content.ProductVersionPackageVersion,productVersion,packageVersion
+org.rhq.core.domain.content.Repo, true, true, true, true, org.rhq.core.domain.content.Repo/3189790231, 3189790231
+@ClientFields,org.rhq.core.domain.content.Repo,id,name,description,creationDate,lastModifiedDate,candidate,syncSchedule,resourceRepos,repoContentSources,repoPackageVersions,repoRepoGroups,repoRepoRelationships,syncResults,repoDistributions,repoAdvisories,syncStatus,owner,isPrivate
+org.rhq.core.domain.content.RepoAdvisory, true, true, true, true, org.rhq.core.domain.content.RepoAdvisory/2143705960, 2143705960
+@ClientFields,org.rhq.core.domain.content.RepoAdvisory,repo,advisory,last_modified
+org.rhq.core.domain.content.RepoContentSource, true, true, true, true, org.rhq.core.domain.content.RepoContentSource/1841647696, 1841647696
+@ClientFields,org.rhq.core.domain.content.RepoContentSource,repo,contentSource,createdTime
+org.rhq.core.domain.content.RepoDistribution, true, true, true, true, org.rhq.core.domain.content.RepoDistribution/525647308, 525647308
+@ClientFields,org.rhq.core.domain.content.RepoDistribution,repo,dist,last_modified
+org.rhq.core.domain.content.RepoGroup, true, true, true, true, org.rhq.core.domain.content.RepoGroup/991170282, 991170282
+@ClientFields,org.rhq.core.domain.content.RepoGroup,id,name,description,repoGroupType,repoRepoGroups
+org.rhq.core.domain.content.RepoGroupType, true, true, true, true, org.rhq.core.domain.content.RepoGroupType/329159940, 329159940
+@ClientFields,org.rhq.core.domain.content.RepoGroupType,id,name,description,repoGroups
+org.rhq.core.domain.content.RepoPackageVersion, true, true, true, true, org.rhq.core.domain.content.RepoPackageVersion/1706074502, 1706074502
+@ClientFields,org.rhq.core.domain.content.RepoPackageVersion,repo,packageVersion,createdTime
+org.rhq.core.domain.content.RepoRelationship, true, true, true, true, org.rhq.core.domain.content.RepoRelationship/2475149249, 2475149249
+@ClientFields,org.rhq.core.domain.content.RepoRelationship,id,relatedRepo,repoRelationshipType,repoRepoRelationships
+org.rhq.core.domain.content.RepoRelationshipType, true, true, true, true, org.rhq.core.domain.content.RepoRelationshipType/3548564992, 3548564992
+@ClientFields,org.rhq.core.domain.content.RepoRelationshipType,id,name,description,repoRelationships
+org.rhq.core.domain.content.RepoRepoGroup, true, true, true, true, org.rhq.core.domain.content.RepoRepoGroup/4061618357, 4061618357
+@ClientFields,org.rhq.core.domain.content.RepoRepoGroup,repo,repoGroup,createdTime
+org.rhq.core.domain.content.RepoRepoRelationship, true, true, true, true, org.rhq.core.domain.content.RepoRepoRelationship/396059845, 396059845
+@ClientFields,org.rhq.core.domain.content.RepoRepoRelationship,repo,repoRelationship,createdTime
+org.rhq.core.domain.content.RepoSyncResults, true, true, true, true, org.rhq.core.domain.content.RepoSyncResults/3157485661, 3157485661
+@ClientFields,org.rhq.core.domain.content.RepoSyncResults,id,repo,status,startTime,endTime,results,percentComplete
+[Lorg.rhq.core.domain.content.RepoSyncResults;, true, true, true, true, [Lorg.rhq.core.domain.content.RepoSyncResults;/4203083280, 4203083280
+org.rhq.core.domain.content.ResourceRepo, true, true, true, true, org.rhq.core.domain.content.ResourceRepo/668649902, 668649902
+@ClientFields,org.rhq.core.domain.content.ResourceRepo,resource,repo,createdTime
+org.rhq.core.domain.content.transfer.ContentResponseResult, true, true, true, true, org.rhq.core.domain.content.transfer.ContentResponseResult/3068163206, 3068163206
+org.rhq.core.domain.criteria.Criteria, false, false, true, false, org.rhq.core.domain.criteria.Criteria/1746149746, 1746149746
+org.rhq.core.domain.criteria.Criteria$Restriction, false, false, true, true, org.rhq.core.domain.criteria.Criteria$Restriction/577703834, 577703834
+org.rhq.core.domain.criteria.SavedSearchCriteria, false, false, true, true, org.rhq.core.domain.criteria.SavedSearchCriteria/1164913115, 1164913115
+org.rhq.core.domain.dashboard.Dashboard, true, true, true, true, org.rhq.core.domain.dashboard.Dashboard/3980701481, 3980701481
+@ClientFields,org.rhq.core.domain.dashboard.Dashboard,id,name,category,shared,configuration,owner,resource,group,portlets
+org.rhq.core.domain.dashboard.DashboardCategory, true, true, true, true, org.rhq.core.domain.dashboard.DashboardCategory/2683189525, 2683189525
+org.rhq.core.domain.dashboard.DashboardPortlet, true, true, true, true, org.rhq.core.domain.dashboard.DashboardPortlet/1955200619, 1955200619
+@ClientFields,org.rhq.core.domain.dashboard.DashboardPortlet,id,portletKey,name,column,index,height,configuration,dashboard
+[Lorg.rhq.core.domain.dashboard.Dashboard;, true, true, true, true, [Lorg.rhq.core.domain.dashboard.Dashboard;/1759447909, 1759447909
+org.rhq.core.domain.drift.DriftComplianceStatus, true, true, true, true, org.rhq.core.domain.drift.DriftComplianceStatus/33029538, 33029538
+org.rhq.core.domain.drift.DriftConfigurationDefinition$DriftHandlingMode, true, true, true, true, org.rhq.core.domain.drift.DriftConfigurationDefinition$DriftHandlingMode/864301172, 864301172
+org.rhq.core.domain.drift.DriftDefinition, true, true, true, true, org.rhq.core.domain.drift.DriftDefinition/1887203450, 1887203450
+@ClientFields,org.rhq.core.domain.drift.DriftDefinition,id,ctime,name,description,isEnabled,driftHandlingMode,interval,configuration,resource,template,isPinned,attached,complianceStatus
+org.rhq.core.domain.drift.DriftDefinitionTemplate, true, true, true, true, org.rhq.core.domain.drift.DriftDefinitionTemplate/2863694346, 2863694346
+@ClientFields,org.rhq.core.domain.drift.DriftDefinitionTemplate,id,ctime,name,description,isUserDefined,resourceType,configuration,changeSetId,driftDefinitions
+org.rhq.core.domain.event.Event, true, true, true, true, org.rhq.core.domain.event.Event/2811013572, 2811013572
+@ClientFields,org.rhq.core.domain.event.Event,id,source,timestamp,severity,detail
+org.rhq.core.domain.event.EventDefinition, true, true, true, true, org.rhq.core.domain.event.EventDefinition/2699359109, 2699359109
+@ClientFields,org.rhq.core.domain.event.EventDefinition,id,resourceType,resourceTypeId,name,displayName,description
+org.rhq.core.domain.event.EventSeverity, true, true, true, true, org.rhq.core.domain.event.EventSeverity/3378001564, 3378001564
+org.rhq.core.domain.event.EventSource, true, true, true, true, org.rhq.core.domain.event.EventSource/216722179, 216722179
+@ClientFields,org.rhq.core.domain.event.EventSource,id,eventDefinition,resource,resourceId,location,events
+org.rhq.core.domain.measurement.Availability, true, true, true, true, org.rhq.core.domain.measurement.Availability/1103866409, 1103866409
+@ClientFields,org.rhq.core.domain.measurement.Availability,id,startTime,endTime,availabilityType,resource
+org.rhq.core.domain.measurement.AvailabilityType, true, true, true, true, org.rhq.core.domain.measurement.AvailabilityType/3089675678, 3089675678
+[Lorg.rhq.core.domain.measurement.Availability;, true, true, true, true, [Lorg.rhq.core.domain.measurement.Availability;/2605243487, 2605243487
+org.rhq.core.domain.measurement.DataType, true, true, true, true, org.rhq.core.domain.measurement.DataType/1753764592, 1753764592
+org.rhq.core.domain.measurement.DisplayType, true, true, true, true, org.rhq.core.domain.measurement.DisplayType/4072059336, 4072059336
+org.rhq.core.domain.measurement.MeasurementBaseline, true, true, true, true, org.rhq.core.domain.measurement.MeasurementBaseline/328698208, 328698208
+@ClientFields,org.rhq.core.domain.measurement.MeasurementBaseline,id,userEntered,baselineMin,baselineMax,baselineMean,computeTime,schedule,scheduleId
+org.rhq.core.domain.measurement.MeasurementCategory, true, true, true, true, org.rhq.core.domain.measurement.MeasurementCategory/3816227206, 3816227206
+org.rhq.core.domain.measurement.MeasurementDefinition, true, true, true, true, org.rhq.core.domain.measurement.MeasurementDefinition/1210383336, 1210383336
+@ClientFields,org.rhq.core.domain.measurement.MeasurementDefinition,id,resourceType,name,displayName,category,schedules,units,numericType,dataType,displayType,defaultOn,defaultInterval,description,rawNumericType,alertConditions,displayOrder,destinationType,version
+org.rhq.core.domain.measurement.MeasurementSchedule, true, true, true, true, org.rhq.core.domain.measurement.MeasurementSchedule/1451131086, 1451131086
+@ClientFields,org.rhq.core.domain.measurement.MeasurementSchedule,id,baseline,definition,resource,interval,mtime,enabled
+[Lorg.rhq.core.domain.measurement.MeasurementSchedule;, true, true, true, true, [Lorg.rhq.core.domain.measurement.MeasurementSchedule;/1665177348, 1665177348
+org.rhq.core.domain.measurement.MeasurementUnits, true, true, true, true, org.rhq.core.domain.measurement.MeasurementUnits/2898768038, 2898768038
+org.rhq.core.domain.measurement.NumericType, true, true, true, true, org.rhq.core.domain.measurement.NumericType/70192453, 70192453
+org.rhq.core.domain.measurement.ResourceAvailability, true, true, true, true, org.rhq.core.domain.measurement.ResourceAvailability/598361861, 598361861
+@ClientFields,org.rhq.core.domain.measurement.ResourceAvailability,id,resource,resourceId,availabilityType
+org.rhq.core.domain.operation.GroupOperationHistory, true, true, true, true, org.rhq.core.domain.operation.GroupOperationHistory/661799499, 661799499
+@ClientFields,org.rhq.core.domain.operation.GroupOperationHistory,group,resourceOperationHistories
+[Lorg.rhq.core.domain.operation.GroupOperationHistory;, true, true, true, true, [Lorg.rhq.core.domain.operation.GroupOperationHistory;/2198102331, 2198102331
+org.rhq.core.domain.operation.OperationDefinition, true, true, true, true, org.rhq.core.domain.operation.OperationDefinition/1431999465, 1431999465
+@ClientFields,org.rhq.core.domain.operation.OperationDefinition,id,resourceType,name,resourceVersionRange,parametersConfigurationDefinition,resultsConfigurationDefinition,description,timeout,displayName
+org.rhq.core.domain.operation.OperationHistory, true, false, true, false, org.rhq.core.domain.operation.OperationHistory/4018598675, 4018598675
+@ClientFields,org.rhq.core.domain.operation.OperationHistory,id,jobName,jobGroup,status,errorMessage,subjectName,createdTime,startedTime,modifiedTime,operationDefinition,parameters
+org.rhq.core.domain.operation.OperationRequestStatus, true, true, true, true, org.rhq.core.domain.operation.OperationRequestStatus/3544011188, 3544011188
+org.rhq.core.domain.operation.ResourceOperationHistory, true, true, true, true, org.rhq.core.domain.operation.ResourceOperationHistory/2582746475, 2582746475
+@ClientFields,org.rhq.core.domain.operation.ResourceOperationHistory,resource,results,groupOperationHistory
+[Lorg.rhq.core.domain.operation.ResourceOperationHistory;, true, true, true, true, [Lorg.rhq.core.domain.operation.ResourceOperationHistory;/3436216395, 3436216395
+org.rhq.core.domain.resource.Agent, true, true, true, true, org.rhq.core.domain.resource.Agent/3054333226, 3054333226
+@ClientFields,org.rhq.core.domain.resource.Agent,id,name,address,port,agentToken,remoteEndpoint,ctime,mtime,lastAvailabilityReport,lastAvailabilityPing,affinityGroup,server,status,backFilled
+[Lorg.rhq.core.domain.resource.Agent;, true, true, true, true, [Lorg.rhq.core.domain.resource.Agent;/3064062917, 3064062917
+org.rhq.core.domain.resource.CannotConnectToAgentException, true, true, false, false, org.rhq.core.domain.resource.CannotConnectToAgentException/2053006350, 2053006350
+org.rhq.core.domain.resource.CreateDeletePolicy, true, true, true, true, org.rhq.core.domain.resource.CreateDeletePolicy/1112938493, 1112938493
+org.rhq.core.domain.resource.CreateResourceHistory, true, true, true, true, org.rhq.core.domain.resource.CreateResourceHistory/548079365, 548079365
+@ClientFields,org.rhq.core.domain.resource.CreateResourceHistory,id,errorMessage,subjectName,ctime,mtime,parentResource,createdResourceName,newResourceKey,status,resourceType,configuration,installedPackage
+[Lorg.rhq.core.domain.resource.CreateResourceHistory;, true, true, true, true, [Lorg.rhq.core.domain.resource.CreateResourceHistory;/2893182869, 2893182869
+org.rhq.core.domain.resource.CreateResourceStatus, true, true, true, true, org.rhq.core.domain.resource.CreateResourceStatus/2468970641, 2468970641
+org.rhq.core.domain.resource.DeleteResourceHistory, true, true, true, true, org.rhq.core.domain.resource.DeleteResourceHistory/3534742503, 3534742503
+@ClientFields,org.rhq.core.domain.resource.DeleteResourceHistory,id,errorMessage,subjectName,ctime,mtime,status,resource
+[Lorg.rhq.core.domain.resource.DeleteResourceHistory;, true, true, true, true, [Lorg.rhq.core.domain.resource.DeleteResourceHistory;/2073965350, 2073965350
+org.rhq.core.domain.resource.DeleteResourceStatus, true, true, true, true, org.rhq.core.domain.resource.DeleteResourceStatus/2008963358, 2008963358
+org.rhq.core.domain.resource.InventoryStatus, true, true, true, true, org.rhq.core.domain.resource.InventoryStatus/2314299133, 2314299133
+org.rhq.core.domain.resource.ProcessScan, true, true, true, true, org.rhq.core.domain.resource.ProcessScan/2530486950, 2530486950
+@ClientFields,org.rhq.core.domain.resource.ProcessScan,id,query,name
+org.rhq.core.domain.resource.ProductVersion, true, true, true, true, org.rhq.core.domain.resource.ProductVersion/1267528663, 1267528663
+@ClientFields,org.rhq.core.domain.resource.ProductVersion,id,version,resourceType,resources,productVersionPackageVersions
+org.rhq.core.domain.resource.Resource, true, true, true, true, org.rhq.core.domain.resource.Resource/3079242432, 3079242432
+@ClientFields,org.rhq.core.domain.resource.Resource,id,uuid,resourceKey,name,ancestry,inventoryStatus,connected,version,description,ctime,mtime,itime,modifiedBy,location,resourceType,childResources,parentResource,resourceConfiguration,pluginConfiguration,agent,alertDefinitions,resourceConfigurationUpdates,pluginConfigurationUpdates,implicitGroups,explicitGroups,contentServiceRequests,createChildResourceRequests,deleteResourceRequests,operationHistories,installedPackages,installedPackageHistory,resourceRepos,schedules,availability,currentAvailability,resourceErrors,eventSources,productVersion,tags,autoGroupBackingGroups,dashboards,driftDefinitions
+org.rhq.core.domain.resource.ResourceCategory, true, true, true, true, org.rhq.core.domain.resource.ResourceCategory/3688433171, 3688433171
+org.rhq.core.domain.resource.ResourceCreationDataType, true, true, true, true, org.rhq.core.domain.resource.ResourceCreationDataType/720129671, 720129671
+org.rhq.core.domain.resource.ResourceError, true, true, true, true, org.rhq.core.domain.resource.ResourceError/2684856881, 2684856881
+@ClientFields,org.rhq.core.domain.resource.ResourceError,id,timeOccurred,resource,errorType,summary,detail
+org.rhq.core.domain.resource.ResourceErrorType, true, true, true, true, org.rhq.core.domain.resource.ResourceErrorType/249899197, 249899197
+[Lorg.rhq.core.domain.resource.ResourceError;, true, true, true, true, [Lorg.rhq.core.domain.resource.ResourceError;/1406667693, 1406667693
+org.rhq.core.domain.resource.ResourceSubCategory, true, true, true, true, org.rhq.core.domain.resource.ResourceSubCategory/425597984, 425597984
+@ClientFields,org.rhq.core.domain.resource.ResourceSubCategory,id,name,displayName,description,ctime,mtime,childSubCategories,parentSubCategory,resourceType
+[Lorg.rhq.core.domain.resource.ResourceSubCategory;, true, true, true, true, [Lorg.rhq.core.domain.resource.ResourceSubCategory;/3691364699, 3691364699
+org.rhq.core.domain.resource.ResourceType, true, true, true, true, org.rhq.core.domain.resource.ResourceType/1681990788, 1681990788
+@ClientFields,org.rhq.core.domain.resource.ResourceType,id,name,description,category,creationDataType,createDeletePolicy,supportsManualAdd,singleton,plugin,ctime,mtime,deleted,childResourceTypes,parentResourceTypes,pluginConfigurationDefinition,resourceConfigurationDefinition,subCategory,metricDefinitions,eventDefinitions,operationDefinitions,processScans,packageTypes,subCategories,resources,resourceGroups,productVersions,bundleType,driftDefinitionTemplates,bundleConfiguration
+[Lorg.rhq.core.domain.resource.Resource;, true, true, true, true, [Lorg.rhq.core.domain.resource.Resource;/1593029016, 1593029016
+org.rhq.core.domain.resource.group.DuplicateExpressionTypeException, true, true, false, false, org.rhq.core.domain.resource.group.DuplicateExpressionTypeException/353212434, 353212434
+org.rhq.core.domain.resource.group.Group, true, false, true, false, org.rhq.core.domain.resource.group.Group/446963940, 446963940
+org.rhq.core.domain.resource.group.GroupCategory, true, true, true, true, org.rhq.core.domain.resource.group.GroupCategory/2405008552, 2405008552
+org.rhq.core.domain.resource.group.GroupDefinition, true, true, true, true, org.rhq.core.domain.resource.group.GroupDefinition/46110691, 46110691
+@ClientFields,org.rhq.core.domain.resource.group.GroupDefinition,id,name,description,recursive,createdTime,modifiedTime,lastCalculationTime,recalculationInterval,expression,managedResourceGroups
+org.rhq.core.domain.resource.group.InvalidExpressionException, true, true, false, false, org.rhq.core.domain.resource.group.InvalidExpressionException/2023959935, 2023959935
+org.rhq.core.domain.resource.group.LdapGroup, true, true, true, true, org.rhq.core.domain.resource.group.LdapGroup/3712207452, 3712207452
+@ClientFields,org.rhq.core.domain.resource.group.LdapGroup,id,role,name,description
+org.rhq.core.domain.resource.group.ResourceGroup, true, true, true, true, org.rhq.core.domain.resource.group.ResourceGroup/3781525022, 3781525022
+@ClientFields,org.rhq.core.domain.resource.group.ResourceGroup,id,explicitResources,implicitResources,roles,operationHistories,configurationUpdates,bundleDestinations,groupDefinition,groupByClause,recursive,groupCategory,resourceType,subject,clusterKey,clusterResourceGroup,clusterBackingGroups,autoGroupParentResource,visible,alertDefinitions,tags,dashboards
+[Lorg.rhq.core.domain.resource.group.ResourceGroup;, true, true, true, true, [Lorg.rhq.core.domain.resource.group.ResourceGroup;/911875817, 911875817
+org.rhq.core.domain.search.SavedSearch, true, true, true, true, org.rhq.core.domain.search.SavedSearch/443285265, 443285265
+@ClientFields,org.rhq.core.domain.search.SavedSearch,id,searchSubsystem,name,description,pattern,lastComputeTime,resultCount,subject,subjectId,global
+[Lorg.rhq.core.domain.search.SavedSearch;, true, true, false, false, [Lorg.rhq.core.domain.search.SavedSearch;/4047037945, 4047037945
+org.rhq.core.domain.search.SearchSubsystem, true, true, true, true, org.rhq.core.domain.search.SearchSubsystem/1549404202, 1549404202
+org.rhq.core.domain.search.SearchSuggestion, true, true, false, false, org.rhq.core.domain.search.SearchSuggestion/2945748403, 2945748403
+org.rhq.core.domain.search.SearchSuggestion$Kind, true, true, false, false, org.rhq.core.domain.search.SearchSuggestion$Kind/120392355, 120392355
+[Lorg.rhq.core.domain.search.SearchSuggestion;, true, true, false, false, [Lorg.rhq.core.domain.search.SearchSuggestion;/2565189777, 2565189777
+org.rhq.core.domain.tagging.Tag, true, true, true, true, org.rhq.core.domain.tagging.Tag/2115083344, 2115083344
+@ClientFields,org.rhq.core.domain.tagging.Tag,id,namespace,semantic,name,resources,resourceGroups,bundles,bundleVersions,bundleDeployments,bundleDestinations
+org.rhq.core.domain.tagging.compsite.TagReportComposite, true, true, true, true, org.rhq.core.domain.tagging.compsite.TagReportComposite/1865628882, 1865628882
+org.rhq.core.domain.util.OrderingField, true, true, true, true, org.rhq.core.domain.util.OrderingField/1965492345, 1965492345
+org.rhq.core.domain.util.PageControl, true, true, true, true, org.rhq.core.domain.util.PageControl/1930924326, 1930924326
+org.rhq.core.domain.util.PageList, true, true, true, true, org.rhq.core.domain.util.PageList/1647180190, 1647180190
+org.rhq.core.domain.util.PageOrdering, true, true, true, true, org.rhq.core.domain.util.PageOrdering/3977130006, 3977130006
+org.rhq.core.domain.util.UnlimitedPageControl, true, true, true, true, org.rhq.core.domain.util.UnlimitedPageControl/1477238873, 1477238873
+org.rhq.enterprise.gui.coregui.client.ViewChangedException, true, true, false, false, org.rhq.enterprise.gui.coregui.client.ViewChangedException/3412077669, 3412077669
+org.rhq.enterprise.gui.coregui.client.gwt.SearchGWTService, false, false, false, false, _, 4169645500

@@ -1,0 +1,23 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: hudson
+Build-Jdk: 1.7.0_09
+Specification-Title: RHQ Domain Model
+Specification-Version: 4.6.0-SNAPSHOT
+Specification-Vendor: Red Hat, Inc.
+Implementation-Title: RHQ Domain Model
+Implementation-Version: 4.6.0-SNAPSHOT
+Implementation-Vendor-Id: org.rhq
+Implementation-Vendor: Red Hat, Inc.
+Build-Number: a0f1b80
+Build-Time: 12/05/12 05:25 PM GMT
+Java-Vendor: Oracle Corporation
+Java-Version: 1.7.0_09
+Maven-Version: 3.0.4
+Os-Arch: i386
+Os-Name: Linux
+Os-Version: 2.6.32-71.el6.i686
+Class-Path: lib/rhq-core-util-4.6.0-SNAPSHOT.jar lib/jdom-1.0.jar lib/
+ i18nlog-1.0.10.jar
+

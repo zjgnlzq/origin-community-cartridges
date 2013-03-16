@@ -1,0 +1,141 @@
+#!/bin/bash
+
+# Creates an infinispan instance
+
+# Exit on any errors
+set -e
+
+function create_repo {
+    application="$1"
+    user_id=$2
+    group_id=$3
+    uuid=$4
+
+    if [ ! -d $APP_HOME ]; then echo "ERROR: Application ${uuid} not found!  Please create." 1>&2; exit 2; fi
+
+    GIT_DIR=$APP_HOME/git/$application.git
+    mkdir -p "$APP_HOME/git"
+    
+    cp -a ${CARTRIDGE_BASE_PATH}/$cartridge_type/template $APP_HOME/git
+    
+    pushd $APP_HOME/git/template > /dev/null
+    git init > /dev/null
+    git add .
+    git commit -m 'Creating template' > /dev/null
+    popd > /dev/null
+    pushd $APP_HOME/git > /dev/null
+    git clone --bare --no-hardlinks template $application.git > /dev/null
+    rm -rf template
+    popd > /dev/null
+
+    setup_git_repo $application $user_id $group_id $uuid "jenkins 1.4"
+}
+
+function print_help {
+    echo "Usage: $0 app-name namespace uuid"
+
+    echo "$0 $@" | logger -p local0.notice -t openshift_origin_infinispan_configure
+    exit 1
+}
+
+while getopts 'd' OPTION
+do
+    case $OPTION in
+        d) set -x
+        ;;
+        ?) print_help
+        ;;
+    esac
+done
+
+[ $# -eq 4 -o $# -eq 3 ] || print_help
+
+source "/etc/openshift/node.conf"
+source ${CARTRIDGE_BASE_PATH}/abstract/info/lib/util
+
+CART_NAME="infinispan"
+CART_VERSION="5.2"
+cartridge_type="$CART_NAME-$CART_VERSION"
+INFINISPAN_CARTRIDGE_ROOT=$CARTRIDGE_BASE_PATH/$cartridge_type
+
+setup_configure "$1" $2 $3 $4
+disable_cgroups
+check_cartridge_dir_doesnt_exist
+
+create_cartridge_instance_dir "$cartridge_type"
+INFINISPAN_INSTANCE_DIR=$(get_cartridge_instance_dir "$cartridge_type")
+
+INFINISPAN_HOME=/opt/infinispan-5.2
+cp -a $INFINISPAN_HOME/bin $INFINISPAN_INSTANCE_DIR
+cp -a $INFINISPAN_HOME/lib $INFINISPAN_INSTANCE_DIR
+cp -a $INFINISPAN_HOME/modules $INFINISPAN_INSTANCE_DIR
+
+pushd "$INFINISPAN_INSTANCE_DIR" > /dev/null
+create_standard_app_dirs
+mkdir -p logs conf
+
+popd > /dev/null
+
+# Repo
+if [ ! -d $git_url ]; then
+  clone_external_git_repo $application $user_id $group_id $uuid $git_url
+else
+  clone_git_repo $application $user_id $group_id $uuid "infinispan-5.2"
+fi
+
+#
+# Find an open localhost IP
+#
+IP=`find_open_ip $uid $uuid`
+PORT=8000
+
+populate_repo_dir
+
+secure_app_dir
+
+secure_cart_instance_dir
+
+observe_setup_app_and_git_dirs
+
+observe_setup_cart_instance_dir
+
+#
+# Create environment variables
+#
+create_standard_cart_env_vars
+create_standard_env_uservars
+create_standard_network_env_vars $IP $PORT
+create_cart_network_env_vars $IP $PORT
+create_standard_repo_dir_env_var
+create_standard_path_env_var
+
+observe_setup_env_uservars_dir
+
+#
+# Import environment vars so they can be used:
+#
+import_env_vars
+
+sed -i "s,# LOG4J_CONFIG=.*,LOG4J_CONFIG=file:///$INFINISPAN_INSTANCE_DIR/conf/log4j.xml\nadd_jvm_args -DINFINISPAN_LOG_DIR=$OPENSHIFT_INFINISPAN_LOG_DIR," $INFINISPAN_INSTANCE_DIR/bin/startServer.sh
+
+#
+# Start the server
+#
+start_app
+
+#
+# Create virtualhost definition for apache
+#
+#export CART_INFO_DIR
+#$CART_INFO_DIR/bin/deploy_httpd_proxy.sh $application $namespace $uuid $IP
+
+restart_httpd_graceful
+
+client_result ""
+client_result "Infinispan created successfully."
+client_result ""
+
+#cart_props "username=system_builder"
+#cart_props "password=$system_builder_password"
+
+enable_cgroups

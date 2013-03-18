@@ -5,6 +5,18 @@
       xsi:schemaLocation="urn:infinispan:config:5.2 http://www.infinispan.org/schemas/infinispan-config-5.2.xsd"
 >
 
-  <namedCache name="myNamedCache" />
+  <global>
+    <globalJmxStatistics enabled="true" />
+
+    <transport>
+      <properties>
+        <property name="configurationFile" value="infinispan-5.2/conf/jgroups.xml" />
+      </properties>
+    </transport>
+  </global>
+
+  <namedCache name="myNamedCache">
+    <jmxStatistics enabled="true" />
+  </namedCache>
 
 </infinispan>

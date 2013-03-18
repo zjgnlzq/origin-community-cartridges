@@ -106,6 +106,7 @@ create_standard_cart_env_vars
 create_standard_env_uservars
 create_standard_network_env_vars $IP $PORT
 create_cart_network_env_vars $IP $PORT
+echo "export OPENSHIFT_${CART_NS}_CLUSTER_PORT='7800'" > $APP_HOME/.env/OPENSHIFT_${CART_NS}_CLUSTER_PORT
 create_standard_repo_dir_env_var
 create_standard_path_env_var
 
@@ -116,7 +117,8 @@ observe_setup_env_uservars_dir
 #
 import_env_vars
 
-sed -i "s,# LOG4J_CONFIG=.*,LOG4J_CONFIG=file:///$INFINISPAN_INSTANCE_DIR/conf/log4j.xml\nadd_jvm_args -DINFINISPAN_LOG_DIR=$OPENSHIFT_INFINISPAN_LOG_DIR," $INFINISPAN_INSTANCE_DIR/bin/startServer.sh
+sed -i "s,# LOG4J_CONFIG=.*,LOG4J_CONFIG=file:///$INFINISPAN_INSTANCE_DIR/conf/log4j.xml," $INFINISPAN_INSTANCE_DIR/bin/startServer.sh
+#sed -i "s,# LOG4J_CONFIG=.*,LOG4J_CONFIG=file:///$INFINISPAN_INSTANCE_DIR/conf/log4j.xml\nadd_jvm_args -DINFINISPAN_LOG_DIR=$OPENSHIFT_INFINISPAN_LOG_DIR\nadd_jvm_args -DINFINISPAN_JGROUPS_EXTERNAL_ADDR=$OPENSHIFT_GEAR_DNS\nadd_jvm_args -DINFINISPAN_JGROUPS_EXTERNAL_PORT=$OPENSHIFT_INFINISPAN_CLUSTER_PROXY_PORT\nadd_jvm_args -DINFINISPAN_JGROUPS_BIND_ADDR=$OPENSHIFT_INTERNAL_IP\nadd_jvm_args -DINFINISPAN_JGROUPS_INITIAL_HOSTS=$OPENSHIFT_INFINISPAN_CLUSTER\nadd_jvm_args -DINFINISPAN_JGROUPS_AUTH_VALUE=$OPENSHIFT_INFINISPAN_CLUSTER," $INFINISPAN_INSTANCE_DIR/bin/startServer.sh
 
 #
 # Start the server

@@ -72,14 +72,21 @@ start_infinispan() {
   infinispan_idle_timeout=${INFINISPAN_IDLE_TIMEOUT:-1}
   infinispan_tcp_no_delay=${INFINISPAN_TCP_NO_DELAY:-true}
 
-  ${cartridge_dir}/bin/startServer.sh \
+  export JVM_PARAMS="-DINFINISPAN_LOG_DIR=$OPENSHIFT_INFINISPAN_LOG_DIR"
+  export JVM_PARAMS="$JVM_PARAMS -DINFINISPAN_JGROUPS_EXTERNAL_ADDR=$OPENSHIFT_GEAR_DNS"
+  export JVM_PARAMS="$JVM_PARAMS -DINFINISPAN_JGROUPS_EXTERNAL_PORT=$OPENSHIFT_INFINISPAN_CLUSTER_PROXY_PORT"
+  export JVM_PARAMS="$JVM_PARAMS -DINFINISPAN_JGROUPS_BIND_ADDR=$OPENSHIFT_INTERNAL_IP"
+  export JVM_PARAMS="$JVM_PARAMS -DINFINISPAN_JGROUPS_INITIAL_HOSTS=$OPENSHIFT_INFINISPAN_CLUSTER"
+  export JVM_PARAMS="$JVM_PARAMS -DINFINISPAN_JGROUPS_AUTH_VALUE=$OPENSHIFT_INFINISPAN_CLUSTER"
+
+  nohup ${cartridge_dir}/bin/startServer.sh \
     -r $infinispan_protocol \
     -l $OPENSHIFT_INTERNAL_IP \
     -p $OPENSHIFT_INTERNAL_PORT \
     -t $infinispan_worker_threads \
     -i $infinispan_idle_timeout \
     -n $infinispan_tcp_no_delay \
-    -c $conf_dir/infinispan.xml >/dev/null &
+    -c $conf_dir/infinispan.xml > /dev/null 2>&1 &
 
   echo $! > /dev/null
 

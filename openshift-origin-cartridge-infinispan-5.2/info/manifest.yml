@@ -15,7 +15,12 @@ Provides: infinispan
 Native-Requires: 
   - java
 Publishes:
-  publish-infinispan-connection-info:
-    Type: "NET_TCP:infinispan:connection-info"
   publish-gear-endpoint:
     Type: "NET_TCP:gear-endpoint-info"
+  publish-infinispan-cluster:
+    Type: "NET_TCP:infinispan-cluster-info"
+  publish-infinispan-url:
+    Type: "NET_TCP:httpd-proxy-info"
+Subscribes:
+  set-infinispan-cluster:
+    Type: "NET_TCP:infinispan-cluster-info"

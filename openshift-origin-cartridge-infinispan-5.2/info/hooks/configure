@@ -138,4 +138,7 @@ client_result ""
 #cart_props "username=system_builder"
 #cart_props "password=$system_builder_password"
 
+add_env_var "INFINISPAN_IP=$OPENSHIFT_INFINISPAN_IP"
+add_env_var "INFINISPAN_PORT=$OPENSHIFT_INFINISPAN_PORT"
+
 enable_cgroups

@@ -68,7 +68,7 @@
 
    <!-- ignore header decoding errors that happen when HAProxy tries to make an HTTP GET request -->
    <category name="org.infinispan.server.hotrod.HotRodDecoder">
-      <priority value="DEBUG"/>
+      <priority value="OFF"/>
    </category>
 
    <category name="org.infinispan.distribution">

@@ -6,6 +6,7 @@
          external_port="${INFINISPAN_JGROUPS_EXTERNAL_PORT}"
          bind_port="7800"
          bind_addr="${INFINISPAN_JGROUPS_BIND_ADDR}"
+         enable_diagnostics="false"
     />
 
     <TCPPING timeout="3000"

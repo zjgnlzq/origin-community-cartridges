@@ -10,7 +10,7 @@
 
     <transport>
       <properties>
-        <property name="configurationFile" value="infinispan-5.2/conf/jgroups.xml" />
+        <property name="configurationFile" value="${INFINISPAN_CONF_DIR}/jgroups.xml" />
       </properties>
     </transport>
   </global>

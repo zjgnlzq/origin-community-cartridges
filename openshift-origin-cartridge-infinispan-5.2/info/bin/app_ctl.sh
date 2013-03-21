@@ -28,8 +28,7 @@ validate_run_as_user
 
 isrunning() {
     # Check for running app
-    #pid=`pgrep -U $uid -f ".*infinispan.*${OPENSHIFT_INTERNAL_IP}.*" 2> /dev/null`
-    pid=`jps -lmv | grep ".*infinispan.*${OPENSHIFT_INTERNAL_IP}.*" | awk {"print $1"} 2> /dev/null`
+    pid=`jps -lmv | grep ".*infinispan.*${OPENSHIFT_INTERNAL_IP}.*" | awk {'print $1'} 2> /dev/null`
     if [ -n "$pid" ]; then
       return 0
     fi
@@ -78,6 +77,7 @@ start_infinispan() {
   export JVM_PARAMS="$JVM_PARAMS -DINFINISPAN_JGROUPS_BIND_ADDR=$OPENSHIFT_INTERNAL_IP"
   export JVM_PARAMS="$JVM_PARAMS -DINFINISPAN_JGROUPS_INITIAL_HOSTS=$OPENSHIFT_INFINISPAN_CLUSTER"
   export JVM_PARAMS="$JVM_PARAMS -DINFINISPAN_JGROUPS_AUTH_VALUE=$OPENSHIFT_INFINISPAN_CLUSTER"
+  export JVM_PARAMS="$JVM_PARAMS -DINFINISPAN_CONF_DIR=$cartridge_dir/conf"
 
   nohup ${cartridge_dir}/bin/startServer.sh \
     -r $infinispan_protocol \
@@ -86,7 +86,7 @@ start_infinispan() {
     -t $infinispan_worker_threads \
     -i $infinispan_idle_timeout \
     -n $infinispan_tcp_no_delay \
-    -c $conf_dir/infinispan.xml > /dev/null 2>&1 &
+    -c $conf_dir/infinispan.xml > $OPENSHIFT_INFINISPAN_LOG_DIR/start.log 2>&1 &
 
   echo $! > /dev/null
 

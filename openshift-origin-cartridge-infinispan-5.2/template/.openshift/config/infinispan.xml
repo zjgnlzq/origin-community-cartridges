@@ -8,7 +8,7 @@
   <global>
     <globalJmxStatistics enabled="true" />
 
-    <transport>
+    <transport machineId="${INFINISPAN_MACHINE_ID}">
       <properties>
         <property name="configurationFile" value="${INFINISPAN_CONF_DIR}/jgroups.xml" />
       </properties>

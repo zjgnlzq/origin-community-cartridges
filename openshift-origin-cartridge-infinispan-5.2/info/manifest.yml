@@ -1,0 +1,26 @@
+Name: infinispan-5.2
+Version: 5.2
+Architecture: noarch
+Display-Name: Infinispan 5.2
+Description: "Infinispan 5.2"
+Vendor: JBoss
+License: LGPL 2.1
+Categories:
+  - cartridge
+Website: http://www.jboss.org/infinispan
+Help-Topics:
+  - "Building with Infinispan" : http://TODO.com/
+Cart-Data:
+Provides: infinispan
+Native-Requires: 
+  - java
+Publishes:
+  publish-gear-endpoint:
+    Type: "NET_TCP:gear-endpoint-info"
+  publish-infinispan-cluster:
+    Type: "NET_TCP:infinispan-cluster-info"
+  publish-infinispan-url:
+    Type: "NET_TCP:httpd-proxy-info"
+Subscribes:
+  set-infinispan-cluster:
+    Type: "NET_TCP:infinispan-cluster-info"

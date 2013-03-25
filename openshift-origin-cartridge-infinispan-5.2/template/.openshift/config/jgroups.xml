@@ -1,0 +1,31 @@
+<config xmlns="urn:org:jgroups"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="urn:org:jgroups http://www.jgroups.org/schema/JGroups-3.2.xsd"
+>
+    <TCP external_addr="${INFINISPAN_JGROUPS_EXTERNAL_ADDR}"
+         external_port="${INFINISPAN_JGROUPS_EXTERNAL_PORT}"
+         bind_port="7800"
+         bind_addr="${INFINISPAN_JGROUPS_BIND_ADDR}"
+         enable_diagnostics="false"
+    />
+
+    <TCPPING timeout="3000"
+             initial_hosts="${INFINISPAN_JGROUPS_INITIAL_HOSTS}"
+             port_range="0"
+             num_initial_members="1" />
+
+    <MERGE2 />
+    <FD />
+    <VERIFY_SUSPECT />
+    <BARRIER />
+    <pbcast.NAKACK />
+    <UNICAST2 />
+    <pbcast.STABLE />
+    <pbcast.GMS />
+    <UFC />
+    <MFC />
+    <FRAG2 />
+    <AUTH auth_class="org.jgroups.auth.MD5Token"
+          token_hash="SHA"
+          auth_value="${INFINISPAN_JGROUPS_AUTH_VALUE}" />
+</config>

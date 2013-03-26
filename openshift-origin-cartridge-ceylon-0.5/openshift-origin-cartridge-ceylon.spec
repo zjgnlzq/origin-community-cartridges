@@ -2,7 +2,7 @@
 %global frameworkdir %{_libexecdir}/openshift/cartridges/v2/ceylon
 
 Name: openshift-origin-cartridge-ceylon
-Version: 0.1.7
+Version: 0.1.8
 Release: 1%{?dist}
 Summary: Ceylon cartridge
 Group: Development/Languages
@@ -48,6 +48,9 @@ rm -rf %{buildroot}
 %doc %{cartridgedir}/README.md
 
 %changelog
+* Tue Mar 26 2013 Matej Lazar <matejonnet@gmail.com> 0.1.8-1
+- Manifest update. (matejonnet@gmail.com)
+
 * Tue Mar 26 2013 Matej Lazar <matejonnet@gmail.com> 0.1.7-1
 - Spec source. (matejonnet@gmail.com)
 - Spec source. (matejonnet@gmail.com)

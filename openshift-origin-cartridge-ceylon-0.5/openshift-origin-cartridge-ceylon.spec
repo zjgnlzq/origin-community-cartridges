@@ -2,7 +2,7 @@
 %global frameworkdir %{_libexecdir}/openshift/cartridges/v2/ceylon
 
 Name: openshift-origin-cartridge-ceylon
-Version: 0.1.5
+Version: 0.1.6
 Release: 1%{?dist}
 Summary: Ceylon cartridge
 Group: Development/Languages
@@ -47,6 +47,9 @@ rm -rf %{buildroot}
 %doc %{cartridgedir}/README.md
 
 %changelog
+* Tue Mar 26 2013 Matej Lazar <matejonnet@gmail.com> 0.1.6-1
+- new package built with tito
+
 * Thu Mar 21 2013 Matej Lazar <matejonnet@gmail.com> 1.0.23-1
 - Welcome page endpoint. (matejonnet@gmail.com)
 

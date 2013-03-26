@@ -9,7 +9,7 @@ Group: Development/Languages
 License: ASL 2.0
 URL: https://openshift.redhat.com
 #TODO source http://mirror.openshift.com/pub/origin-server/source/%{name}/%{name}-%{version}.tar.gz
-Source0:
+Source0: http://mirror.openshift.com/pub/origin-community-cartridges/source/%{name}/%{name}-%{version}.tar.gz
 Requires: openshift-origin-cartridge-abstract
 Requires: java-1.7.0-openjdk
 Requires: ceylon >= 0.5

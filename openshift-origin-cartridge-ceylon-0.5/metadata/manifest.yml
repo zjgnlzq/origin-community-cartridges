@@ -1,6 +1,6 @@
 Name: ceylon
 Cartridge-Short-Name: CEYLON
-Display-Name: Ceylon
+Display-Name: Ceylon 0.5
 Description: "Ceylon is a language for writing large programs in teams. Ceylon has a powerful static type system that prevents many bugs while letting you express more, more easily: union types, intersection types, higher order functions, mixin inheritance, and enumerated types."
 Version: '0.5'
 License: "Please visit ceylon website for license details."
@@ -9,8 +9,8 @@ Vendor: Red Hat
 Cartridge-Version: 0.0.1
 Cartridge-Vendor: redhat
 Categories:
-  - ceylon
   - service
+  - ceylon
   - web_framework
 Website: http://ceylon-lang.org
 Help-Topics:
@@ -59,6 +59,18 @@ Subscribes:
   set-nosql-db-connection-info:
     Type: "NET_TCP:nosqldb:connection-info"
     Required: false
+  set-mysql-connection-info:
+    Type: "NET_TCP:db:mysql"
+    Required : false
+  set-postgres-connection-info:
+    Type: "NET_TCP:db:postgres"
+    Required : false
+  set-doc-url:
+    Type: "STRING:urlpath"
+    Required : false
+Scaling:
+  Min: 1
+  Max: -1
 Group-Overrides:
   - components:
     - ceylon-0.5
@@ -68,19 +80,3 @@ Endpoints:
     Private-Port-Name: PORT
     Private-Port:      8080
     Public-Port-Name:  PROXY_PORT
-  - Private-IP-Name:   IP
-    Private-Port-Name: CLUSTER_PORT
-    Private-Port:      7600
-    Public-Port-Name:  CLUSTER_PROXY_PORT
-  - Private-IP-Name:   IP
-    Private-Port-Name: MESSAGING_PORT
-    Private-Port:      5445
-    Public-Port-Name:  MESSAGING_PROXY_PORT
-  - Private-IP-Name:   IP
-    Private-Port-Name: MESSAGING_THROUGHPUT_PORT
-    Private-Port:      5455
-    Public-Port-Name:  MESSAGING_THROUGHPUT_PROXY_PORT
-  - Private-IP-Name:   IP
-    Private-Port-Name: REMOTING_PORT
-    Private-Port:      4447
-    Public-Port-Name:  REMOTING_PROXY_PORT

@@ -1,5 +1,5 @@
-redhat-jbosseap/
-redhat-jbosseap/metadata/
-redhat-jbosseap/configuration/
-redhat-jbosseap/env/
-redhat-jbosseap/template/
+redhat-ceylon/
+redhat-ceylon/metadata/
+redhat-ceylon/configuration/
+redhat-ceylon/env/
+redhat-ceylon/template/

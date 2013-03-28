@@ -2,11 +2,14 @@
 
 CEYLON_VERSION=0.5
 
+CEYLON_HOME=/usr/lib/ceylon/0.5/
+CEYLON_BIN_DIR=${CEYLON_HOME}bin
 CEYLON_LOG_PATH=${OPENSHIFT_CEYLON_LOG_DIR}/ceylon.log
-CEYLON_BIN_DIR=${CEYLON_HOME}/bin
 CEYLON_PID_FILE=${OPENSHIFT_CEYLON_RUN_DIR}/ceylon.pid
 
+
 source ${OPENSHIFT_CEYLON_DIR}lib/util
+source ${OPENSHIFT_CEYLON_DIR}env/*
 
 function start() {
 	ceylon_repos="";
@@ -44,9 +47,11 @@ function start() {
 		source ${OPENSHIFT_REPO_DIR}.openshift/config/ceylon.properties
 
 		echo "Starting Ceylon module: ${run_module_id}. Using repos: ${ceylon_repos}"
+		echo "With JAVA_OPTS: ${JAVA_OPTS}"
 
 		# Start
-		$CEYLON_BIN_DIR/ceylon run ${run_module_id} ${ceylon_repos} >> ${CEYLON_LOG_PATH} 2>&1 &
+		#$CEYLON_BIN_DIR/ceylon run ${run_module_id} ${ceylon_repos} >> ${CEYLON_LOG_PATH} 2>&1 &
+		$CEYLON_BIN_DIR/ceylon run ${run_module_id} ${ceylon_repos} &
 		ceylon_pid=$!
 		echo $ceylon_pid > $CEYLON_PID_FILE
 

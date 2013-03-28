@@ -4,21 +4,31 @@ set -x
 
 version=0.5
 PATH=/bin:/usr/bin:$PATH
-cartridge_type="ceylon-${version}"
+#cartridge_type="ceylon-${version}"
 
-echo "export OPENSHIFT_CEYLON_VERSION='$version'" > "$OPENSHIFT_CEYLON_DIR/env/OPENSHIFT_CEYLON_VERSION"
+#source $OPENSHIFT_HOMEDIR/redhat-ceylon/env/*
 
-CEYLON_HOME=/usr/lib/ceylon/${version}
-CEYLON_USER_REPO=$APP_HOME/app-root/data/ceylon/repo
-CART_DIR=$APP_HOME/$cartridge_type
-APP_LOG_DIR=${CART_DIR}/log
+#echo "export OPENSHIFT_CEYLON_VERSION='$version'" > "$OPENSHIFT_CEYLON_DIR/env/OPENSHIFT_CEYLON_VERSION"
 
-echo "export CEYLON_HOME=$CEYLON_HOME" > $APP_HOME/.env/CEYLON_HOME
-echo "export CEYLON_USER_REPO=$CEYLON_USER_REPO" > $APP_HOME/.env/CEYLON_USER_REPO
+#OPENSHIFT_CEYLON_DATA_DIR=$OPENSHIFT_CEYLON_DIR/data
+#mkdir $OPENSHIFT_CEYLON_DATA_DIR
+#OPENSHIFT_CEYLON_LOG_DIR=$OPENSHIFT_CEYLON_DIR/log
+#mkdir $OPENSHIFT_CEYLON_LOG_DIR
+mkdir $OPENSHIFT_CEYLON_DIR/{log,data,run}
 
-# Create additional directories 
-mkdir -p ${CEYLON_USER_REPO}
-mkdir -p ${APP_LOG_DIR}
+#CEYLON_HOME=/usr/lib/ceylon/${version}
+OPENSHIFT_CEYLON_MODULES_REPO_DIR=$OPENSHIFT_CEYLON_DIR/data/ceylon_repo
+mkdir $OPENSHIFT_CEYLON_MODULES_REPO_DIR
+
+#echo "export CEYLON_HOME=$CEYLON_HOME" > $APP_HOME/.env/CEYLON_HOME
+#echo "export CEYLON_USER_REPO=$CEYLON_USER_REPO" > $APP_HOME/.env/CEYLON_USER_REPO
+
+
 
 # Copy the version specific files up to ceylon directory
-#TODO cp -r ${OPENSHIFT_CEYLON_DIR}/versions/${version}/standalone/configuration/* ${OPENSHIFT_CEYLON_DIR}/standalone/configuration
+cp -r ${OPENSHIFT_CEYLON_DIR}/versions/${version}/template/* ${OPENSHIFT_CEYLON_DIR}/template
+cp -r ${OPENSHIFT_CEYLON_DIR}/versions/${version}/template/.openshift ${OPENSHIFT_CEYLON_DIR}/template
+
+touch ${OPENSHIFT_CEYLON_DIR}run/setup_marker
+
+exit 0

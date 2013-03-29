@@ -2,7 +2,7 @@
 # Utility functions for use in the cartridge scripts.
 
 function wait_for_stop {
-        pid=$1
+    pid=$1
     for i in {1..60}
     do
         if `ps --pid $pid > /dev/null 2>&1`

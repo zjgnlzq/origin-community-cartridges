@@ -5,14 +5,20 @@ source ${OPENSHIFT_CEYLON_DIR}env/*
 
 CEYLON_HOME=/usr/lib/ceylon/${OPENSHIFT_CEYLON_VERSION}/
 CEYLON_BIN_DIR=${CEYLON_HOME}bin
+
+OPENSHIFT_CEYLON_MODULES_REPO_DIR=${OPENSHIFT_CEYLON_DIR}data/ceylon_repo
+OPENSHIFT_CEYLON_LOG_DIR=${OPENSHIFT_CEYLON_DIR}log
+OPENSHIFT_CEYLON_RUN_DIR=${OPENSHIFT_CEYLON_DIR}run
+
 CEYLON_LOG_PATH=${OPENSHIFT_CEYLON_LOG_DIR}/ceylon.log
 CEYLON_PID_FILE=${OPENSHIFT_CEYLON_RUN_DIR}/ceylon.pid
 
+CEYLON_FIRST_BOOT_MODULES=${OPENSHIFT_CEYLON_RUN_DIR}/use_first_boot_modules
+
 function start() {
 	ceylon_repos="";
-	if [ -f "${OPENSHIFT_CEYLON_RUN_DIR}/setup_marker" ]; then
-		rm -f ${OPENSHIFT_CEYLON_RUN_DIR}/setup_marker
-		ceylon_repos=" --rep ${OPENSHIFT_CEYLON_DIR}/versions/${CEYLON_VERSION}/template-fitstboot/modules"
+	if [ -f "${CEYLON_FIRST_BOOT_MODULES}" ]; then
+		ceylon_repos=" --rep ${OPENSHIFT_CEYLON_DIR}versions/${OPENSHIFT_CEYLON_VERSION}/template-fitstboot/modules"
 	fi
 	
 	echo "Starting Ceylon cart"
@@ -25,7 +31,7 @@ function start() {
 		echo "Application is already running" 1>&2
 	else
 		JAVA_OPTS="-Dserver.bind.host=${OPENSHIFT_CEYLON_IP}"
-		JAVA_OPTS="$JAVA_OPTS -Dserver.files.location=${OPENSHIFT_REPO_DIR}/web-content/"
+		JAVA_OPTS="$JAVA_OPTS -Dserver.files.location=${OPENSHIFT_REPO_DIR}web-content/"
 
 		JAVA_OPTS="$JAVA_OPTS -Dceylon.cache.repo=${OPENSHIFT_CEYLON_MODULES_REPO_DIR}/cache"
 		JAVA_OPTS="$JAVA_OPTS -Dcom.redhat.ceylon.common.tool.terminal.width=9999" #do not wrap output
@@ -47,7 +53,7 @@ function start() {
 		echo "With JAVA_OPTS: ${JAVA_OPTS}"
 
 		# Start
-		#$CEYLON_BIN_DIR/ceylon run ${run_module_id} ${ceylon_repos} >> ${CEYLON_LOG_PATH} 2>&1 &
+		#TODO uncomment $CEYLON_BIN_DIR/ceylon run ${run_module_id} ${ceylon_repos} >> ${CEYLON_LOG_PATH} 2>&1 &
 		$CEYLON_BIN_DIR/ceylon run ${run_module_id} ${ceylon_repos} &
 		ceylon_pid=$!
 		echo $ceylon_pid > $CEYLON_PID_FILE
@@ -113,6 +119,11 @@ function tidy() {
 function build() {
 	echo "Building Ceylon app..."
 
+	if [ -f "${CEYLON_FIRST_BOOT_MODULES}" ]; then
+		# Use first boot modules till first user build.
+		rm -f ${OPENSHIFT_CEYLON_RUN_DIR}/use_first_boot_modules
+	fi
+
 	JAVA_OPTS="-Dceylon.cache.repo=${OPENSHIFT_CEYLON_MODULES_REPO_DIR}/cache"
 	JAVA_OPTS="$JAVA_OPTS -Dcom.redhat.ceylon.common.tool.terminal.width=9999" #do not wrap output
 
@@ -125,7 +136,7 @@ function build() {
 
 	compile_files=`find ${OPENSHIFT_REPO_DIR}/source/ -name *\.ceylon -o -name *\.java`
 	printf "Compiling files:\n$compile_files\n"
-	${CEYLON_HOME}/bin/ceylon compile --javac=-encoding=utf8 --src ${OPENSHIFT_REPO_DIR}/source --out ${OPENSHIFT_CEYLON_MODULES_REPO_DIR} ${ceylon_repos} ${compile_files}
+	${CEYLON_BIN_DIR}/ceylon compile --javac=-encoding=utf8 --src ${OPENSHIFT_REPO_DIR}/source --out ${OPENSHIFT_CEYLON_MODULES_REPO_DIR} ${ceylon_repos} ${compile_files}
 }
 
 function deploy() {

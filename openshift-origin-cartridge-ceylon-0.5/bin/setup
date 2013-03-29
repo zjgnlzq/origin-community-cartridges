@@ -9,19 +9,13 @@ echo "export OPENSHIFT_CEYLON_VERSION='$version'" > "$OPENSHIFT_CEYLON_DIR/env/O
 
 mkdir $OPENSHIFT_CEYLON_DIR/{log,data,run}
 
-#CEYLON_HOME=/usr/lib/ceylon/${version}
-OPENSHIFT_CEYLON_MODULES_REPO_DIR=$OPENSHIFT_CEYLON_DIR/data/ceylon_repo
+OPENSHIFT_CEYLON_MODULES_REPO_DIR=${OPENSHIFT_CEYLON_DIR}data/ceylon_repo
 mkdir $OPENSHIFT_CEYLON_MODULES_REPO_DIR
-
-#echo "export CEYLON_HOME=$CEYLON_HOME" > $APP_HOME/.env/CEYLON_HOME
-#echo "export CEYLON_USER_REPO=$CEYLON_USER_REPO" > $APP_HOME/.env/CEYLON_USER_REPO
-
-
 
 # Copy the version specific files up to ceylon directory
 cp -r ${OPENSHIFT_CEYLON_DIR}/versions/${version}/template/* ${OPENSHIFT_CEYLON_DIR}/template
 cp -r ${OPENSHIFT_CEYLON_DIR}/versions/${version}/template/.openshift ${OPENSHIFT_CEYLON_DIR}/template
 
-touch ${OPENSHIFT_CEYLON_DIR}run/setup_marker
+touch ${OPENSHIFT_CEYLON_DIR}run/use_first_boot_modules
 
 exit 0

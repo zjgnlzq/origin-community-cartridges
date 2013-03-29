@@ -2,7 +2,7 @@
 %global frameworkdir %{_libexecdir}/openshift/cartridges/v2/ceylon
 
 Name: openshift-origin-cartridge-ceylon
-Version: 0.1.11
+Version: 0.1.12
 Release: 1%{?dist}
 Summary: Ceylon cartridge
 Group: Development/Languages
@@ -48,6 +48,9 @@ rm -rf %{buildroot}
 %doc %{cartridgedir}/README.md
 
 %changelog
+* Fri Mar 29 2013 Matej Lazar <matejonnet@gmail.com> 0.1.12-1
+- Variables moved to setup. Jenkins cmd update. (matejonnet@gmail.com)
+
 * Fri Mar 29 2013 Matej Lazar <matejonnet@gmail.com> 0.1.11-1
 - Manifest, env fix. (matejonnet@gmail.com)
 

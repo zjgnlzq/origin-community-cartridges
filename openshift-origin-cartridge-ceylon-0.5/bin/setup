@@ -3,17 +3,10 @@ set -u
 set -x
 
 version=0.5
-PATH=/bin:/usr/bin:$PATH
-#cartridge_type="ceylon-${version}"
+echo "export OPENSHIFT_CEYLON_VERSION='$version'" > "$OPENSHIFT_CEYLON_DIR/env/OPENSHIFT_CEYLON_VERSION"
 
-#source $OPENSHIFT_HOMEDIR/redhat-ceylon/env/*
+#PATH=/bin:/usr/bin:$PATH
 
-#echo "export OPENSHIFT_CEYLON_VERSION='$version'" > "$OPENSHIFT_CEYLON_DIR/env/OPENSHIFT_CEYLON_VERSION"
-
-#OPENSHIFT_CEYLON_DATA_DIR=$OPENSHIFT_CEYLON_DIR/data
-#mkdir $OPENSHIFT_CEYLON_DATA_DIR
-#OPENSHIFT_CEYLON_LOG_DIR=$OPENSHIFT_CEYLON_DIR/log
-#mkdir $OPENSHIFT_CEYLON_LOG_DIR
 mkdir $OPENSHIFT_CEYLON_DIR/{log,data,run}
 
 #CEYLON_HOME=/usr/lib/ceylon/${version}

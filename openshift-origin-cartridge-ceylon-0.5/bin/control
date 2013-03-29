@@ -1,15 +1,12 @@
 #!/bin/bash -e
 
-CEYLON_VERSION=0.5
+source ${OPENSHIFT_CEYLON_DIR}lib/util
+source ${OPENSHIFT_CEYLON_DIR}env/*
 
-CEYLON_HOME=/usr/lib/ceylon/0.5/
+CEYLON_HOME=/usr/lib/ceylon/${OPENSHIFT_CEYLON_VERSION}/
 CEYLON_BIN_DIR=${CEYLON_HOME}bin
 CEYLON_LOG_PATH=${OPENSHIFT_CEYLON_LOG_DIR}/ceylon.log
 CEYLON_PID_FILE=${OPENSHIFT_CEYLON_RUN_DIR}/ceylon.pid
-
-
-source ${OPENSHIFT_CEYLON_DIR}lib/util
-source ${OPENSHIFT_CEYLON_DIR}env/*
 
 function start() {
 	ceylon_repos="";

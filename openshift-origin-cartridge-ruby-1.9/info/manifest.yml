@@ -1,5 +1,5 @@
 Name: ruby-1.9
-Namespace: RUBY
+Cartridge-Short-Name: RUBY
 Display-Name: Ruby 1.9
 Description: "Ruby is a dynamic, reflective, general-purpose object-oriented programming language. We recommend using Ruby 1.9 for new applications."
 Version: 1.0.0
@@ -12,9 +12,6 @@ Categories:
 Help-Topics:
   "Developer Center": https://openshift.redhat.com/community/developers
 Cart-Data:
-  - Key: OPENSHIFT_TMP_DIR
-    Type: environment
-    Description: "Directory to store application temporary files."
   - Key: OPENSHIFT_REPO_DIR
     Type: environment
     Description: "Application root directory where application files reside. This directory is reset every time you do a git-push"
@@ -30,9 +27,6 @@ Cart-Data:
   - Key: OPENSHIFT_APP_NAME
     Type: environment
     Description: "Application name"
-  - Key: OPENSHIFT_DATA_DIR
-    Type: environment
-    Description: "Directory to store application data files. Preserved across git-pushes. Not shared across gears."
   - Key: OPENSHIFT_APP_UUID
     Type: environment
     Description: "Unique ID which identified the application. Does not change between gears."
@@ -68,4 +62,9 @@ Group-Overrides:
     - ruby-1.9
     - web_proxy
 Endpoints:
-  - "IP:PORT(8080):PROXY_PORT"
+  - Private-IP-Name:   IP
+    Private-Port-Name: PORT
+    Private-Port:      8080
+    Public-Port-Name:  PROXY_PORT
+Additional-Control-Actions:
+    - threaddump

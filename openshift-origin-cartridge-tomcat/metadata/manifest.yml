@@ -1,24 +1,23 @@
-Name: jbossews
-Cartridge-Short-Name: JBOSSEWS
+Name: tomcat
+Cartridge-Short-Name: TOMCAT
 Cartridge-Vendor: Red Hat
 Cartridge-Version: 0.0.1
-Display-Name: Tomcat 7 (JBoss EWS 2.0)
-Description: "JBoss Enterprise Web Server is the enterprise-class Java web container for large-scale lightweight web applications based on Tomcat 7. Build and deploy JSPs and Servlets in the cloud."
-Version: '2.0'
+Display-Name: Tomcat 8
+Description: "Apache Tomcat is an open source software implementation of the Java Servlet and JavaServer Pages technologies."
+Version: '8.0'
 License: ASL 2.0
 Vendor:  jboss.com
 Categories:
   - service
   - java
-  - jboss
   - tomcat
-  - tomcat7
+  - tomcat8
   - web_framework
-Website: http://www.redhat.com/products/jbossenterprisemiddleware/web-server/
+Website: http://http://tomcat.apache.org/
 Help-Topics:
-  "Developer Center": https://openshift.redhat.com/community/developers
+  "Developer Center": http://http://tomcat.apache.org/
 Cart-Data:
-  - Key: OPENSHIFT_JBOSSEAP_LOG_DIR
+  - Key: OPENSHIFT_TOMCAT_LOG_DIR
     Type: environment
     Description: "Directory to store application log files."
   - Key: OPENSHIFT_TMP_DIR
@@ -49,12 +48,10 @@ Cart-Data:
     Type: environment
     Description: "Unique ID which identified the gear. This value changes between gears."
 Provides:
-  - "jbossews-2.0"
-  - "jbossews"
-  - "jbossews(version) = 2.0.0"
-  - "jbossews(version) >= 2.0"
-  - "jboss-ews-2.0"
-  - "jboss-ews-2.0.0"
+  - "tomcat-8.0"
+  - "tomcat"
+  - "tomcat(version) = 8.0"
+  - "tomcat(version) >= 8.0"
 Publishes:
   get-internal-uri:
     Type: "NET_TCP:http"
@@ -73,7 +70,7 @@ Subscribes:
     Type: "NET_TCP:jdbc"
 Group-Overrides:
   - components:
-    - "jbossews-2.0"
+    - "tomcat-8.0"
     - web_proxy
 Endpoints:
   - Private-IP-Name:   IP

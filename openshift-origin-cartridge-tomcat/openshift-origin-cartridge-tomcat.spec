@@ -1,4 +1,4 @@
-%global cartridgedir %{_libexecdir}/openshift/cartridges/v2/jbossews
+%global cartridgedir %{_libexecdir}/openshift/cartridges/v2/tomcat
 
 Summary:       Provides Tomcat support
 Name:          openshift-origin-cartridge-tomcat
@@ -64,7 +64,7 @@ alternatives --install /etc/alternatives/tomcat8 tomcat8 /usr/share/tomcat8 102
 alternatives --set jtomcat8 /usr/share/tomcat8
 
 
-%{_sbindir}/oo-admin-cartridge --action install --offline --source /usr/libexec/openshift/cartridges/v2/jbossews
+%{_sbindir}/oo-admin-cartridge --action install --offline --source /usr/libexec/openshift/cartridges/v2/tomcat
 
 
 %files

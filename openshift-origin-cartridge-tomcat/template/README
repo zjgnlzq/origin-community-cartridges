@@ -77,8 +77,8 @@ of use.  The following list are some common variables but far from exhaustive:
     System.getenv("OPENSHIFT_APP_NAME")           - Application name
     System.getenv("OPENSHIFT_DATA_DIR")           - For persistent storage (between pushes)
     System.getenv("OPENSHIFT_TMP_DIR")            - Temp storage (unmodified files deleted after 10 days)
-    System.getenv("OPENSHIFT_JBOSSEWS_IP")        - The IP address used to bind EWS2.0
-    System.getenv("OPENSHIFT_JBOSSEWS_HTTP_PORT") - The EWS2.0 listening port
+    System.getenv("OPENSHIFT_TOMCAT_IP")        - The IP address used to bind EWS2.0
+    System.getenv("OPENSHIFT_TOMCAT_HTTP_PORT") - The EWS2.0 listening port
 
 When embedding a database using 'rhc cartridge add', you can reference environment
 variables for username, host and password. For example, when embedding MySQL 5.1, the 

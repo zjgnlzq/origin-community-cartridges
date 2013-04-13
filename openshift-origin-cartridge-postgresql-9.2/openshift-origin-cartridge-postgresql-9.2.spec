@@ -2,7 +2,7 @@
 %global frameworkdir %{_libexecdir}/openshift/cartridges/postgresql-9.2
 
 Name: openshift-origin-cartridge-postgresql-9.2
-Version: 0.0.1
+Version: 0.0.2
 Release: 1%{?dist}
 Summary: Provides embedded PostgreSQL support
 
@@ -106,6 +106,13 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Sat Apr 13 2013 Krishna Raman <kraman@gmail.com> 0.0.2-1
+- Fixing non-java cartridge manifest   - update for new endpoint structure   -
+  update for Additional-Control-Actions (kraman@gmail.com)
+- Cartridge updates (kraman@gmail.com)
+- Fixing Postgres:  - endpoint exposure  - Unix socket creation
+  (kraman@gmail.com)
+
 * Mon Feb 04 2013 Krishna Raman <kraman@gmail.com> 0.0.1-1
 - new package built with tito
 

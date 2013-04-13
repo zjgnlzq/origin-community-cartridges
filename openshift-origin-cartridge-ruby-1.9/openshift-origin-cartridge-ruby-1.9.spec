@@ -2,7 +2,7 @@
 
 Summary:   Provides ruby rack support running on Phusion Passenger
 Name:      openshift-origin-cartridge-ruby-1.9
-Version:   0.0.1
+Version:   0.0.2
 Release:   1%{?dist}
 Group:     Development/Languages
 License:   ASL 2.0
@@ -121,6 +121,15 @@ rm -rf %{buildroot}
 %doc %{cartridgedir}/LICENSE
 
 %changelog
+* Sat Apr 13 2013 Krishna Raman <kraman@gmail.com> 0.0.2-1
+- Fixing non-java cartridge manifest   - update for new endpoint structure   -
+  update for Additional-Control-Actions (kraman@gmail.com)
+- Cartridge updates (kraman@gmail.com)
+- Adding PHP 5.4 cartridge for Fedora 18 Adding Perl 5.16 cartridge for F18
+  Added PhpMyAdmin 3.5 cartridge for F18 Fixing Ruby 1.9 cartridge for F18
+  Updating Postgres cartridge for F18 and updating manifest to comply with
+  model refactor changes (kraman@gmail.com)
+
 * Fri Dec 14 2012 Krishna Raman <kraman@gmail.com> 0.0.1-1
 - new package built with tito
 

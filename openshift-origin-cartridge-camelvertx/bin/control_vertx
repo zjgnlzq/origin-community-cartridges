@@ -7,8 +7,18 @@ camelvertx_PID_FILE=${OPENSHIFT_HOMEDIR}/app-root/runtime/camelvertx.pid
 
 cartridge_type="camelvertx"
 
+function start() {
+
+	pushd ${OPENSHIFT_CAMELVERTX_DIR}/template
+	./bin/run-vertx.sh &
+	popd
+
+}
+
 case "$1" in
-  *)         	exit 0
+  start)        start ;;
+  *)            exit 0
 esac
+
 
 

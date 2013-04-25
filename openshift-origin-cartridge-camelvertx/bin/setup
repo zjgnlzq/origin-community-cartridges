@@ -1,0 +1,7 @@
+#!/bin/bash -eu
+
+if [ "$OPENSHIFT_APP_UUID" = "$OPENSHIFT_GEAR_UUID" ]; then
+	${OPENSHIFT_CAMELVERTX_DIR}/bin/setup_camel $@
+else
+	${OPENSHIFT_CAMELVERTX_DIR}/bin/setup_vertx $@
+fi

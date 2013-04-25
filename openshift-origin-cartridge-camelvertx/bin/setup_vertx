@@ -1,0 +1,9 @@
+#!/bin/bash -eu
+
+case "$1" in
+  -v|--version)
+    version="$2"
+esac
+
+# Create additional directories required by camelvertx
+mkdir -p ${OPENSHIFT_CAMELVERTX_DIR}/{bin,template}

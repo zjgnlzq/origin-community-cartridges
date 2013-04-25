@@ -1,0 +1,7 @@
+#!/bin/bash -eu
+
+version=6.0
+
+echo "$version" > "$OPENSHIFT_CAMELVERTX_DIR/env/OPENSHIFT_CAMELVERTX_VERSION"
+
+cp -r ${OPENSHIFT_CAMELVERTX_DIR}/versions/${version}/template/vertx/* ${OPENSHIFT_CAMELVERTX_DIR}/template

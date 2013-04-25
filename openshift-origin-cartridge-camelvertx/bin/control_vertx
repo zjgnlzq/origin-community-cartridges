@@ -1,0 +1,14 @@
+#!/bin/bash -e
+
+source $OPENSHIFT_CARTRIDGE_SDK_BASH
+
+camelvertx_BIN_DIR=${OPENSHIFT_CAMELVERTX_DIR}/bin
+camelvertx_PID_FILE=${OPENSHIFT_HOMEDIR}/app-root/runtime/camelvertx.pid
+
+cartridge_type="camelvertx"
+
+case "$1" in
+  *)         	exit 0
+esac
+
+

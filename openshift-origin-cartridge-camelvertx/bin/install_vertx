@@ -5,3 +5,8 @@ version=6.0
 echo "$version" > "$OPENSHIFT_CAMELVERTX_DIR/env/OPENSHIFT_CAMELVERTX_VERSION"
 
 cp -r ${OPENSHIFT_CAMELVERTX_DIR}/versions/${version}/template/vertx/* ${OPENSHIFT_CAMELVERTX_DIR}/template
+
+pushd $OPENSHIFT_CAMELVERTX_DIR/template/vertx
+  sed -i -e "s/\${env.OPENSHIFT_CAMELVERTX_IP}/${OPENSHIFT_CAMELVERTX_IP}/g" ./vert.x-1.3.1.final/conf/cluster.xml
+  sed -i -e "s/\${env.OPENSHIFT_CAMELVERTX_IP}/${OPENSHIFT_CAMELVERTX_IP}/g" ./bin/run-vertx.sh
+popd

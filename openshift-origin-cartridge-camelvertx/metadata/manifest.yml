@@ -60,8 +60,6 @@ Publishes:
     Type: "NET_TCP:gear-endpoint-info"
   publish-jboss-cluster:
     Type: "NET_TCP:camelvertx-cluster-info"
-  publish-jboss-remoting:
-    Type: "NET_TCP:camelvertx-remoting-info"
 Subscribes:
   set-db-connection-info:
     Type: "NET_TCP:db:connection-info"
@@ -80,8 +78,6 @@ Subscribes:
     Required : false
   set-jboss-cluster:
     Type: "NET_TCP:camelvertx-cluster-info"
-  set-jboss-remoting:
-    Type: "NET_TCP:camelvertx-remoting-info"
 Scaling:
   Min: 1
   Max: -1
@@ -102,18 +98,6 @@ Endpoints:
     Private-Port-Name: CLUSTER_PORT
     Private-Port:      7600
     Public-Port-Name:  CLUSTER_PROXY_PORT
-  - Private-IP-Name:   IP
-    Private-Port-Name: MESSAGING_PORT
-    Private-Port:      5445
-    Public-Port-Name:  MESSAGING_PROXY_PORT
-  - Private-IP-Name:   IP
-    Private-Port-Name: MESSAGING_THROUGHPUT_PORT
-    Private-Port:      5455
-    Public-Port-Name:  MESSAGING_THROUGHPUT_PROXY_PORT
-  - Private-IP-Name:   IP
-    Private-Port-Name: REMOTING_PORT
-    Private-Port:      4447
-    Public-Port-Name:  REMOTING_PROXY_PORT
 Additional-Control-Actions:
     - threaddump
 Install-Build-Required: false

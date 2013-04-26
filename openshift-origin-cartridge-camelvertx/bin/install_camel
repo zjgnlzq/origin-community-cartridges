@@ -18,8 +18,15 @@ pushd $OPENSHIFT_CAMELVERTX_DIR > /dev/null
   ln -s ${JBOSS_HOME}/modules
 popd > /dev/null
 
+if [ -z "${OPENSHIFT_CAMELVERTX_CLUSTER}" ]; then
+	OPENSHIFT_CAMELVERTX_CLUSTER="${OPENSHIFT_CAMELVERTX_IP}"
+fi
+
 pushd $OPENSHIFT_CAMELVERTX_DIR/template/camel
-  sed -i -e "s/\${env.OPENSHIFT_CAMELVERTX_IP}/${OPENSHIFT_CAMELVERTX_IP}/g" ./src/main/resources/cluster.xml
+  sed -i -e "s/\${env.OPENSHIFT_CAMELVERTX_IP}/${OPENSHIFT_CAMELVERTX_IP}/g" \
+  		-e "s/\${env.OPENSHIFT_CAMELVERTX_CLUSTER}/${OPENSHIFT_CAMELVERTX_CLUSTER}/g" \
+  		./src/main/resources/cluster.xml
+  sed -i -e "s/\${env.OPENSHIFT_CAMELVERTX_LOG_DIR}/${OPENSHIFT_CAMELVERTX_LOG_DIR}/g" ./src/main/resources/log4j.properties
   mvn clean package -Popenshift -DskipTests
   cp deployments/ROOT.war $OPENSHIFT_CAMELVERTX_DIR/standalone/deployments
 popd

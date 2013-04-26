@@ -25,4 +25,4 @@ done
 
 [ $# -eq 3 ] || print_help
 
-echo ${OPENSHIFT_GEAR_DNS}:${OPENSHIFT_CAMELVERTX_CLUSTER_PROXY_PORT}
+echo ${OPENSHIFT_GEAR_DNS}

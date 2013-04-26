@@ -123,6 +123,9 @@
   <!-- This creates an embedded ActiveMQ Broker -->
   <broker xmlns="http://activemq.apache.org/schema/core" brokerName="broker1" useJmx="true" persistent="false"
           dataDirectory="activemq-data">
+    <managementContext>
+       <managementContext createConnector="false"/>
+    </managementContext>
     <transportConnectors>
       <transportConnector uri="tcp://localhost:31313"/>
       <transportConnector uri="stomp://localhost:31316"/>

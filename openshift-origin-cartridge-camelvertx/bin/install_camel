@@ -9,7 +9,7 @@ ln -s ${OPENSHIFT_CAMELVERTX_DIR}/standalone/log ${OPENSHIFT_CAMELVERTX_DIR}/log
 cp -r ${OPENSHIFT_CAMELVERTX_DIR}/versions/${version}/template/camel/* ${OPENSHIFT_CAMELVERTX_DIR}/template
 cp -r ${OPENSHIFT_CAMELVERTX_DIR}/versions/${version}/template/camel/.openshift ${OPENSHIFT_CAMELVERTX_DIR}/template
 cp ${OPENSHIFT_CAMELVERTX_DIR}/standalone/configuration/standalone.xml ${OPENSHIFT_CAMELVERTX_DIR}/template/.openshift/config
-sed -i "s/{APP_NAME}/${OPENSHIFT_APP_NAME}/g" ${OPENSHIFT_CAMELVERTX_DIR}/template/camel/pom.xml
+sed -i "s/{APP_NAME}/${OPENSHIFT_APP_NAME}/g" ${OPENSHIFT_CAMELVERTX_DIR}/template/pom.xml
 
 JBOSS_HOME=/etc/alternatives/camelvertx-$version
 
@@ -17,19 +17,6 @@ pushd $OPENSHIFT_CAMELVERTX_DIR > /dev/null
   ln -s ${JBOSS_HOME}/jboss-modules.jar
   ln -s ${JBOSS_HOME}/modules
 popd > /dev/null
-
-if [ -z "${OPENSHIFT_CAMELVERTX_CLUSTER}" ]; then
-	OPENSHIFT_CAMELVERTX_CLUSTER="${OPENSHIFT_CAMELVERTX_IP}"
-fi
-
-pushd $OPENSHIFT_CAMELVERTX_DIR/template/camel
-  sed -i -e "s/\${env.OPENSHIFT_CAMELVERTX_IP}/${OPENSHIFT_CAMELVERTX_IP}/g" \
-  		-e "s/\${env.OPENSHIFT_CAMELVERTX_CLUSTER}/${OPENSHIFT_CAMELVERTX_CLUSTER}/g" \
-  		./src/main/resources/cluster.xml
-  sed -i -e "s/\${env.OPENSHIFT_CAMELVERTX_LOG_DIR}/${OPENSHIFT_CAMELVERTX_LOG_DIR}/g" ./src/main/resources/log4j.properties
-  mvn clean package -Popenshift -DskipTests
-  cp deployments/ROOT.war $OPENSHIFT_CAMELVERTX_DIR/standalone/deployments
-popd
 
 JAVA_HOME=/etc/alternatives/java_sdk_1.7.0
 M2_HOME=/etc/alternatives/maven-3.0

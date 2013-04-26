@@ -21,7 +21,7 @@
             </multicast>
             <tcp-ip enabled="true">
             	<members>${env.OPENSHIFT_CAMELVERTX_CLUSTER}</members>
-                <interface>${env.OPENSHIFT_CARTVERTX_IP}</interface>
+                <interface>${env.OPENSHIFT_CAMELVERTX_IP}</interface>
             </tcp-ip>
             <aws enabled="false">
                 <access-key>my-access-key</access-key>

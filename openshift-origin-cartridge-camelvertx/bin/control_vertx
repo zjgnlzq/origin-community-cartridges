@@ -7,10 +7,38 @@ camelvertx_PID_FILE=${OPENSHIFT_HOMEDIR}/app-root/runtime/camelvertx.pid
 
 cartridge_type="camelvertx"
 
+function build() {
+    
+    	pushd ${OPENSHIFT_REPO_DIR} > /dev/null
+    	
+    	OPENSHIFT_CAMELVERTX_CLUSTER="${OPENSHIFT_CAMELVERTX_IP}"
+    	
+    	pushd $OPENSHIFT_CAMELVERTX_DIR/template
+  			sed -i -e "s/\${env.OPENSHIFT_CAMELVERTX_IP}/${OPENSHIFT_CAMELVERTX_IP}/g" \
+  					-e "s/\${env.OPENSHIFT_CAMELVERTX_CLUSTER}/${OPENSHIFT_CAMELVERTX_CLUSTER}/g" \
+  					./vert.x-1.3.1.final/conf/cluster.xml
+  			sed -i -e "s/\${env.OPENSHIFT_CAMELVERTX_IP}/${OPENSHIFT_CAMELVERTX_IP}/g" ./bin/run-vertx.sh
+		popd
+
+}
+
+function deploy() {
+	echo "Deploying JBoss"
+	
+	if [ "$(ls ${OPENSHIFT_REPO_DIR}/deployments)" ]; then
+		rsync -r --delete --exclude ".*" ${OPENSHIFT_REPO_DIR}/deployments/ ${OPENSHIFT_CAMELVERTX_DIR}/standalone/deployments/
+	else
+    rm -rf ${OPENSHIFT_CAMELVERTX_DIR}/standalone/deployments/*
+  fi
+}
+
 function start() {
 
+	build
+	deploy
+
 	pushd ${OPENSHIFT_CAMELVERTX_DIR}/template
-	./bin/run-vertx.sh &
+		./bin/run-vertx.sh &
 	popd
 
 }

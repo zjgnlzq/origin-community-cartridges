@@ -13,7 +13,7 @@
         <password>dev-pass</password>
     </group>
     <network>
-        <port auto-increment="false">7600</port>
+        <port auto-increment="false">${env.OPENSHIFT_CAMELVERTX_CLUSTER_PROXY_PORT}</port>
         <join>
             <multicast enabled="false">
                 <multicast-group>224.2.2.3</multicast-group>
@@ -21,7 +21,8 @@
             </multicast>
             <tcp-ip enabled="true">
             	<members>${env.OPENSHIFT_CAMELVERTX_CLUSTER}</members>
-                <interface>${env.OPENSHIFT_CAMELVERTX_IP}</interface>
+                <interface>${env.OPENSHIFT_CAMELVERTX_PROXY_IP}</interface>
+                <conn-timeout-seconds>30</conn-timeout-seconds>
             </tcp-ip>
             <aws enabled="false">
                 <access-key>my-access-key</access-key>
@@ -34,7 +35,7 @@
         one you want to use
         -->
         <interfaces enabled="true">
-            <interface>${env.OPENSHIFT_CAMELVERTX_IP}</interface>
+            <interface>${env.OPENSHIFT_CAMELVERTX_PROXY_IP}</interface>
         </interfaces>
 
         

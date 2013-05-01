@@ -2,8 +2,8 @@
 
 source $OPENSHIFT_CARTRIDGE_SDK_BASH
 
-camelvertx_BIN_DIR=${OPENSHIFT_CAMELVERTX_DIR}/bin
-camelvertx_PID_FILE=${OPENSHIFT_HOMEDIR}/app-root/runtime/camelvertx.pid
+CAMELVERTX_BIN_DIR=${OPENSHIFT_CAMELVERTX_DIR}/bin
+CAMELVERTX_PID_FILE=${OPENSHIFT_HOMEDIR}/app-root/runtime/camelvertx.pid
 
 cartridge_type="camelvertx"
 
@@ -21,8 +21,8 @@ function hot_deploy_marker_is_present {
 function isrunning() {
     
     # Check for running app
-    if [ -f "$camelvertx_PID_FILE" ]; then
-      jbpid=$(cat $camelvertx_PID_FILE);
+    if [ -f "$CAMELVERTX_PID_FILE" ]; then
+      jbpid=$(cat $CAMELVERTX_PID_FILE);
       if /bin/ps --pid $jbpid 1>&2 >/dev/null;
       then
         return 0
@@ -128,9 +128,9 @@ function start() {
     jopts="${JAVA_OPTS}"
     [ "${ENABLE_JPDA:-0}" -eq 1 ] && jopts="-Xdebug -Xrunjdwp:transport=dt_socket,address=${OPENSHIFT_CAMELVERTX_IP}:8787,server=y,suspend=n ${JAVA_OPTS}"
     JAVA_OPTS="${jopts}"
-    ${camelvertx_BIN_DIR}/standalone.sh > ${OPENSHIFT_TMP_DIR}/${cartridge_type}.log 2>&1 &
+    ${CAMELVERTX_BIN_DIR}/standalone.sh > ${OPENSHIFT_TMP_DIR}/${cartridge_type}.log 2>&1 &
     PROCESS_ID=$!
-    echo "$PROCESS_ID" > ${camelvertx_PID_FILE}
+    echo "$PROCESS_ID" > ${CAMELVERTX_PID_FILE}
     if ! ishttpup; then
       echo "Timed out waiting for http listening port"
       exit 1
@@ -143,8 +143,8 @@ function stop() {
   echo "Stopping $cartridge_type cart"
   
   if isrunning; then
-		if [ -f "$camelvertx_PID_FILE" ]; then
-      pid=$(cat $camelvertx_PID_FILE);
+		if [ -f "$CAMELVERTX_PID_FILE" ]; then
+      pid=$(cat $CAMELVERTX_PID_FILE);
       echo "Sending SIGTERM to jboss:$pid ..." 1>&2
       killtree $pid
     else 
@@ -185,8 +185,8 @@ function threaddump() {
     if ! isrunning; then
         echo "Application is stopped"
         exit 1
-    elif [ -f "$camelvertx_PID_FILE" ]; then
-        pid=$(cat $camelvertx_PID_FILE);
+    elif [ -f "$CAMELVERTX_PID_FILE" ]; then
+        pid=$(cat $CAMELVERTX_PID_FILE);
         java_pid=`ps h --ppid $pid -o '%p'`
         kill -3 $java_pid
         

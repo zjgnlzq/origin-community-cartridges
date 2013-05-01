@@ -167,6 +167,11 @@ eval splitJvmOpts $DEFAULT_JVM_OPTS $JAVA_OPTS $VERTX_OPTS
 exec "$JAVACMD" \
     "${JVM_OPTS[@]}" \
     -Dhazelcast.jmx=true \
+    -Dhazelcast.local.localAddress=${env.OPENSHIFT_CAMELVERTX_PROXY_IP} \
+    -Dhazelcast.local.localBindAddress=${env.OPENSHIFT_CAMELVERTX_IP} \
+    -Dhazelcast.local.localBindPort=${env.OPENSHIFT_CAMELVERTX_CLUSTER_PROXY_PORT} \
+    -Dhazelcast.socket.server.bind.any=false \
+    -Dhazelcast.socket.client.bind.any=false \
     -Djava.util.logging.config.file=${VERTX_JUL_CONFIG:-${APP_HOME}/conf/logging.properties} \
     -Djruby.home=$JRUBY_HOME \
     -classpath "$CLASSPATH" \

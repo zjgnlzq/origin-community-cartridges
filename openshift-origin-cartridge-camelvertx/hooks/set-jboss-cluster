@@ -12,7 +12,7 @@ for arg in $kvargs; do
     if [ -z "$list" ]; then
         list="$ip"
     else
-        list="$list,$ip"
+        list="$list $ip"
     fi
 done
 

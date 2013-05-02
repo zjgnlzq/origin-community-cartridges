@@ -5,5 +5,3 @@ case "$1" in
     version="$2"
 esac
 
-# Create additional directories required by camelvertx
-mkdir -p ${OPENSHIFT_CAMELVERTX_DIR}/{bin,template}

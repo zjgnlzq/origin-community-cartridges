@@ -6,8 +6,7 @@ case "$1" in
 esac
 
 # Create additional directories required by camelvertx
-mkdir -p ${OPENSHIFT_HOMEDIR}/.m2
-mkdir -p ${OPENSHIFT_CAMELVERTX_DIR}/{bin,template,standalone/tmp,standalone/deployments,standalone/configuration,standalone/log,standalone/data}
+mkdir -p ${OPENSHIFT_CAMELVERTX_DIR}/{standalone/tmp,standalone/deployments,standalone/configuration,standalone/log,standalone/data}
 
 # Copy the version specific files up to camelvertx directory
 cp -r ${OPENSHIFT_CAMELVERTX_DIR}/versions/${version}/standalone/configuration/* ${OPENSHIFT_CAMELVERTX_DIR}/standalone/configuration

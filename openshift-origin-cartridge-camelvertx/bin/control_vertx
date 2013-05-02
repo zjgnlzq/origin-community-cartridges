@@ -73,14 +73,12 @@ function stop() {
 }
 
 function build() {
-    
-    	pushd ${OPENSHIFT_REPO_DIR} > /dev/null
     	
     	if [ -z $OPENSHIFT_CAMELVERTX_CLUSTER ]; then
     		OPENSHIFT_CAMELVERTX_CLUSTER="${OPENSHIFT_CAMELVERTX_IP}"
     	fi
     	
-    	cp ${OPENSHIFT_REPO_DIR}/vert.x-1.3.1.final/conf/cluster.xml $OPENSHIFT_CAMELVERTX_DIR/template/vert.x-1.3.1.final/conf/
+    	cp ${OPENSHIFT_REPO_DIR}/vertx/vert.x-1.3.1.final/conf/cluster.xml $OPENSHIFT_CAMELVERTX_DIR/template/vertx/vert.x-1.3.1.final/conf/
     	
     	OPENSHIFT_CAMELVERTX_PROXY_IP=$(nslookup ${OPENSHIFT_GEAR_DNS} | awk '/^Address: / { print $2 ; exit }')
     	
@@ -89,7 +87,7 @@ function build() {
         	hostnames="<hostname>$address<\/hostname>${hostnames}"
 		done
     	
-    	pushd $OPENSHIFT_CAMELVERTX_DIR/template
+    	pushd $OPENSHIFT_CAMELVERTX_DIR/template/vertx
   			sed -i -e "s/\${env.OPENSHIFT_CAMELVERTX_CLUSTER_PROXY_PORT}/${OPENSHIFT_CAMELVERTX_CLUSTER_PROXY_PORT}/g" \
   					-e "s/\${env.OPENSHIFT_CAMELVERTX_PROXY_IP}/${OPENSHIFT_CAMELVERTX_PROXY_IP}/g" \
   					-e "s/\${env.OPENSHIFT_CAMELVERTX_CLUSTER}/${hostnames}/g" \
@@ -107,8 +105,8 @@ function build() {
 function deploy() {
 	echo "Deploying JBoss"
 	
-	if [ "$(ls ${OPENSHIFT_REPO_DIR}/deployments)" ]; then
-		rsync -r --delete --exclude ".*" ${OPENSHIFT_REPO_DIR}/deployments/ ${OPENSHIFT_CAMELVERTX_DIR}/standalone/deployments/
+	if [ "$(ls ${OPENSHIFT_REPO_DIR}/vertx/deployments)" ]; then
+		rsync -r --delete --exclude ".*" ${OPENSHIFT_REPO_DIR}/vertx/deployments/ ${OPENSHIFT_CAMELVERTX_DIR}/standalone/deployments/
 	else
     rm -rf ${OPENSHIFT_CAMELVERTX_DIR}/standalone/deployments/*
   fi
@@ -119,7 +117,7 @@ function start() {
 	build
 	#deploy
 
-	pushd ${OPENSHIFT_CAMELVERTX_DIR}/template
+	pushd ${OPENSHIFT_CAMELVERTX_DIR}/template/vertx
 		./bin/run-vertx.sh &
 		PROCESS_ID=$!
     	echo "$PROCESS_ID" > ${CAMELVERTX_PID_FILE}

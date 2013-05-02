@@ -10,7 +10,7 @@ cartridge_type="camelvertx"
 # Checks for the presence of the user-specified hot_deploy marker in the app
 # repo. Returns 0 if the marker is present, otherwise 1.
 function hot_deploy_marker_is_present {
-  if [ -f "${OPENSHIFT_REPO_DIR}/.openshift/markers/hot_deploy" ]; then
+  if [ -f "${OPENSHIFT_REPO_DIR}/camel/.openshift/markers/hot_deploy" ]; then
     return 0
   else
     return 1
@@ -84,21 +84,38 @@ function ishttpup() {
 }
 
 function build() {
-    
-    	pushd ${OPENSHIFT_REPO_DIR} > /dev/null
     	
-    	OPENSHIFT_CAMELVERTX_CLUSTER="${OPENSHIFT_CAMELVERTX_IP}"
-    	LOG_FILE=$(echo "$OPENSHIFT_CAMELVERTX_LOG_DIR" | sed -e "s@\/@\/\\\@g")
+    	LOG_DIR=$(echo "$OPENSHIFT_CAMELVERTX_LOG_DIR" | sed -e "s@\/@\\\\/@g")
     	
     	OPENSHIFT_CAMELVERTX_PROXY_IP=$(nslookup ${OPENSHIFT_GEAR_DNS} | awk '/^Address: / { print $2 ; exit }')
-
-		sed -i -e "s/\${env.OPENSHIFT_CAMELVERTX_CLUSTER_PROXY_PORT}/${OPENSHIFT_CAMELVERTX_CLUSTER_PROXY_PORT}/g" \
-  					-e "s/\${env.OPENSHIFT_CAMELVERTX_PROXY_IP}/${OPENSHIFT_CAMELVERTX_PROXY_IP}/g" \
-  					-e "s/\${env.OPENSHIFT_CAMELVERTX_CLUSTER}/${OPENSHIFT_CAMELVERTX_CLUSTER}/g" \
-				./src/main/resources/cluster.xml
-		sed -i -e "s/\${env.OPENSHIFT_CAMELVERTX_LOG_DIR}/${LOG_DIR}/g" ./src/main/resources/log4j.properties
+    	
+    	hostnames=
+    	for address in $OPENSHIFT_CAMELVERTX_CLUSTER; do
+        	hostnames="<hostname>$address<\/hostname>${hostnames}"
+		done
 		
-		mvn clean package -Popenshift -DskipTests
+		mkdir -p ${OPENSHIFT_HOMEDIR}/.m2/repository/com/hazelcast/hazelcast/2.4.1/
+		cp ${OPENSHIFT_REPO_DIR}/camel/lib/hazelcast-2.4.1.jar ${OPENSHIFT_HOMEDIR}/.m2/repository/com/hazelcast/hazelcast/2.4.1/
+		
+		pushd ${OPENSHIFT_REPO_DIR}/camel > /dev/null
+		
+		    mkdir -p tmp/deployments
+		    cp -rf src tmp
+		    cp pom.xml tmp
+		    cd tmp
+    	
+			sed -i -e "s/\${env.OPENSHIFT_CAMELVERTX_CLUSTER_PROXY_PORT}/${OPENSHIFT_CAMELVERTX_CLUSTER_PROXY_PORT}/g" \
+					-e "s/\${env.OPENSHIFT_CAMELVERTX_PROXY_IP}/${OPENSHIFT_CAMELVERTX_PROXY_IP}/g" \
+					-e "s/\${env.OPENSHIFT_CAMELVERTX_CLUSTER}/${hostnames}/g" \
+					./src/main/resources/cluster.xml
+		    sed -i -e "s/\${env.OPENSHIFT_CAMELVERTX_IP}/${OPENSHIFT_CAMELVERTX_IP}/g" ./src/main/webapp/WEB-INF/applicationContext.xml
+			sed -i -e "s/\${env.OPENSHIFT_CAMELVERTX_LOG_DIR}/${LOG_DIR}/g" ./src/main/resources/log4j.properties
+	    	
+			mvn clean package -Popenshift -DskipTests
+			
+			cp deployments/ROOT.war ../deployments
+			cd ..
+			rm -rf tmp
    
     	popd > /dev/null
 
@@ -107,8 +124,8 @@ function build() {
 function deploy() {
 	echo "Deploying JBoss"
 	
-	if [ "$(ls ${OPENSHIFT_REPO_DIR}/deployments)" ]; then
-		rsync -r --delete --exclude ".*" ${OPENSHIFT_REPO_DIR}/deployments/ ${OPENSHIFT_CAMELVERTX_DIR}/standalone/deployments/
+	if [ "$(ls ${OPENSHIFT_REPO_DIR}/camel/deployments)" ]; then
+		rsync -r --delete --exclude ".*" ${OPENSHIFT_REPO_DIR}/camel/deployments/ ${OPENSHIFT_CAMELVERTX_DIR}/standalone/deployments/
 	else
     rm -rf ${OPENSHIFT_CAMELVERTX_DIR}/standalone/deployments/*
   fi
@@ -120,7 +137,7 @@ function start() {
     build
     deploy
     
-	if [ -f "${OPENSHIFT_REPO_DIR}/.openshift/markers/enable_jpda" ]; then
+	if [ -f "${OPENSHIFT_REPO_DIR}/camel/.openshift/markers/enable_jpda" ]; then
     	ENABLE_JPDA=1
     fi
 

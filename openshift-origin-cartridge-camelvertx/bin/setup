@@ -1,5 +1,8 @@
 #!/bin/bash -eu
 
+mkdir -p ${OPENSHIFT_HOMEDIR}/.m2
+mkdir -p ${OPENSHIFT_CAMELVERTX_DIR}/{bin,template}
+
 if [ "$OPENSHIFT_APP_UUID" = "$OPENSHIFT_GEAR_UUID" ]; then
 	${OPENSHIFT_CAMELVERTX_DIR}/bin/setup_camel $@
 else

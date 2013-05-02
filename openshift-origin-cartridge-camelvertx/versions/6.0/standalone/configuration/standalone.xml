@@ -19,7 +19,6 @@
 		<extension module="org.jboss.as.jsr77" />
 		<extension module="org.jboss.as.logging" />
 		<extension module="org.jboss.as.mail" />
-		<extension module="org.jboss.as.messaging" />
 		<extension module="org.jboss.as.naming" />
 		<extension module="org.jboss.as.osgi" />
 		<extension module="org.jboss.as.pojo" />
@@ -271,68 +270,6 @@
 				<smtp-server outbound-socket-binding-ref="mail-smtp" />
 			</mail-session>
 		</subsystem>
-		<subsystem xmlns="urn:jboss:domain:messaging:1.2">
-			<hornetq-server>
-				<clustered>true</clustered>
-				<persistence-enabled>true</persistence-enabled>
-				<security-enabled>false</security-enabled>
-				<journal-file-size>102400</journal-file-size>
-				<journal-min-files>2</journal-min-files>
-				
-				<thread-pool-max-size>${messaging.thread.pool.max.size}</thread-pool-max-size>
- 	            <scheduled-thread-pool-max-size>${messaging.scheduled.thread.pool.max.size}</scheduled-thread-pool-max-size>
- 	            
-				<connectors>
-					<netty-connector name="netty" socket-binding="messaging" />
-					<in-vm-connector name="in-vm" server-id="0" />
-				</connectors>
-				<acceptors>
-					<netty-acceptor name="netty" socket-binding="messaging" />
-					<in-vm-acceptor name="in-vm" server-id="0" />
-				</acceptors>
-				
-				<address-settings>
-					<!--default for catch all -->
-					<address-setting match="#">
-						<dead-letter-address>jms.queue.DLQ</dead-letter-address>
-						<expiry-address>jms.queue.ExpiryQueue</expiry-address>
-						<redelivery-delay>0</redelivery-delay>
-						<redistribution-delay>1000</redistribution-delay>
-						<max-size-bytes>10485760</max-size-bytes>
-						<address-full-policy>BLOCK</address-full-policy>
-						<message-counter-history-day-limit>10
-						</message-counter-history-day-limit>
-					</address-setting>
-				</address-settings>
-				<jms-connection-factories>
-					<connection-factory name="InVmConnectionFactory">
-						<connectors>
-							<connector-ref connector-name="in-vm" />
-						</connectors>
-						<entries>
-							<entry name="java:/ConnectionFactory" />
-						</entries>
-					</connection-factory>
-					<connection-factory name="RemoteConnectionFactory">
-						<connectors>
-							<connector-ref connector-name="netty" />
-						</connectors>
-						<entries>
-							<entry name="java:jboss/exported/jms/RemoteConnectionFactory" />
-						</entries>
-					</connection-factory>
-					<pooled-connection-factory name="hornetq-ra">
-						<transaction mode="xa" />
-						<connectors>
-							<connector-ref connector-name="in-vm" />
-						</connectors>
-						<entries>
-							<entry name="java:/JmsXA" />
-						</entries>
-					</pooled-connection-factory>
-				</jms-connection-factories>
-			</hornetq-server>
-		</subsystem>
 		<subsystem xmlns="urn:jboss:domain:naming:1.2">
 			<remote-naming />
 		</subsystem>
@@ -446,7 +383,6 @@
 			port="3528" />
 		<socket-binding name="jacorb-ssl" interface="unsecure"
 			port="3529" />
-		<socket-binding name="messaging" port="5445" />
 		<socket-binding name="osgi-http" interface="management"
 			port="8090" />
 		<socket-binding name="remoting" port="4447" />

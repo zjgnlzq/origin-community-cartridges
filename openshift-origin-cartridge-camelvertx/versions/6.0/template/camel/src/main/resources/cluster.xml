@@ -20,7 +20,7 @@
                 <multicast-port>54327</multicast-port>
             </multicast>
             <tcp-ip enabled="true">
-            	<members>${env.OPENSHIFT_CAMELVERTX_CLUSTER}</members>
+            	${env.OPENSHIFT_CAMELVERTX_CLUSTER}
                 <interface>${env.OPENSHIFT_CAMELVERTX_PROXY_IP}</interface>
                 <conn-timeout-seconds>30</conn-timeout-seconds>
             </tcp-ip>

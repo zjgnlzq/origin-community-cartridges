@@ -25,6 +25,7 @@ done
 
 [ $# -eq 3 ] || print_help
 
-OPENSHIFT_CAMELVERTX_PROXY_IP=$(nslookup ${OPENSHIFT_GEAR_DNS} | awk '/^Address: / { print $2 ; exit }')
+#OPENSHIFT_CAMELVERTX_PROXY_IP=$(nslookup ${OPENSHIFT_GEAR_DNS} | awk '/^Address: / { print $2 ; exit }')
+OPENSHIFT_CAMELVERTX_PROXY_IP=$(ping -c 1 ${OPENSHIFT_GEAR_DNS} | awk '{ print $3 ; exit }' | sed 's/(//g' | sed 's/)//g')
 
 echo ${OPENSHIFT_CAMELVERTX_PROXY_IP}:${OPENSHIFT_CAMELVERTX_CLUSTER_PROXY_PORT}

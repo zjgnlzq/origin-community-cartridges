@@ -87,7 +87,8 @@ function build() {
     	
     	LOG_DIR=$(echo "$OPENSHIFT_CAMELVERTX_LOG_DIR" | sed -e "s@\/@\\\\/@g")
     	
-    	OPENSHIFT_CAMELVERTX_PROXY_IP=$(nslookup ${OPENSHIFT_GEAR_DNS} | awk '/^Address: / { print $2 ; exit }')
+    	#OPENSHIFT_CAMELVERTX_PROXY_IP=$(nslookup ${OPENSHIFT_GEAR_DNS} | awk '/^Address: / { print $2 ; exit }')
+    	OPENSHIFT_CAMELVERTX_PROXY_IP=$(ping -c 1 ${OPENSHIFT_GEAR_DNS} | awk '{ print $3 ; exit }' | sed 's/(//g' | sed 's/)//g')
     	
     	hostnames=
     	for address in $OPENSHIFT_CAMELVERTX_CLUSTER; do

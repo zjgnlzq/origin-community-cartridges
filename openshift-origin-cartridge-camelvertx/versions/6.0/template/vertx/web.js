@@ -29,4 +29,4 @@ var server = vertx.createHttpServer();
 server.requestHandler(rm);
 vertx.createSockJSServer(server).bridge({prefix: "/eventbus"}, [{}], [{}]);
 
-server.listen(8008, '${env.OPENSHIFT_CAMELVERTX_IP}');
+server.listen(18001, '${env.OPENSHIFT_CAMELVERTX_IP}');

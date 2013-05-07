@@ -18,7 +18,7 @@ var eb = vertx.eventBus;
 
 var client = vertx.createHttpClient();
 client.setPort( 8080 );
-client.setHost( 'localhost' );
+client.setHost(java.lang.System.getProperty('torqueboxHost') || 'localhost');
 
 var demoHandlers = {
   putRequestOnEventBus: function(address, mockData) {

@@ -109,7 +109,10 @@ function build() {
 					-e "s/\${env.OPENSHIFT_CAMELVERTX_PROXY_IP}/${OPENSHIFT_CAMELVERTX_PROXY_IP}/g" \
 					-e "s/\${env.OPENSHIFT_CAMELVERTX_CLUSTER}/${hostnames}/g" \
 					./src/main/resources/cluster.xml
-		    sed -i -e "s/\${env.OPENSHIFT_CAMELVERTX_IP}/${OPENSHIFT_CAMELVERTX_IP}/g" ./src/main/webapp/WEB-INF/applicationContext.xml
+		    sed -i -e "s/\${env.OPENSHIFT_CAMELVERTX_IP}/${OPENSHIFT_CAMELVERTX_IP}/g" \
+		    	-e "s/\${env.BROKER_HOST}/bam.keynote.projectodd.org/g" \
+		    	./src/main/webapp/WEB-INF/applicationContext.xml
+		    	
 			sed -i -e "s/\${env.OPENSHIFT_CAMELVERTX_LOG_DIR}/${LOG_DIR}/g" ./src/main/resources/log4j.properties
 	    	
 			mvn clean package -Popenshift -DskipTests

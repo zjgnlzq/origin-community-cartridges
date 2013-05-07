@@ -87,7 +87,7 @@
     <property name="connectionFactory">
       <bean class="org.fusesource.stomp.jms.StompJmsConnectionFactory">
         <!-- TODO switch this to the TorqueBox URL -->
-        <property name="brokerURI" value="tcp://${env.OPENSHIFT_CAMELVERTX_IP}:8675"/>
+        <property name="brokerURI" value="tcp://${env.BROKER_HOST}:8675"/>
         <property name="queuePrefix" value="/"/>
       </bean>
     </property>

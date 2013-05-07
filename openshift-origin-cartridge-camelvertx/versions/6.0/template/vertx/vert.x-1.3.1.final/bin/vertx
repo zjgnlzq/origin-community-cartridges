@@ -172,6 +172,7 @@ exec "$JAVACMD" \
     -Dhazelcast.local.localBindPort=7600 \
     -Dhazelcast.socket.server.bind.any=false \
     -Dhazelcast.socket.client.bind.any=false \
+    -DtorqueboxHost=$TORQUEBOX_HOST \
     -Djava.util.logging.config.file=${VERTX_JUL_CONFIG:-${APP_HOME}/conf/logging.properties} \
     -Djruby.home=$JRUBY_HOME \
     -classpath "$CLASSPATH" \

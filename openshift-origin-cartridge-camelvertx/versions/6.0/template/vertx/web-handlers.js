@@ -53,5 +53,10 @@ var demoHandlers = {
     } else {
     }
   },
+  
+  rootContext: function(request) {
+      request.response.end("KEYNOTE!");
+  },
+
 
 };

@@ -21,12 +21,13 @@ var rm = new vertx.RouteMatcher();
 
 rm.all( '/users', demoHandlers.putRequestOnEventBus('demo.user-registration', { identifier: 'lewis' } ) );
 rm.all( '/bids',  demoHandlers.putRequestOnEventBus('demo.bids' ) );
+rm.allWithRegEx( '/', demoHandlers.rootContext );
 
 rm.allWithRegEx( '/auctions(/.*)?', demoHandlers.proxyRequest );
-rm.allWithRegEx( '/(.*)',           demoHandlers.serveFile );
+rm.allWithRegEx( '/file/(.*)',           demoHandlers.serveFile );
 
 var server = vertx.createHttpServer();
 server.requestHandler(rm);
 vertx.createSockJSServer(server).bridge({prefix: "/eventbus"}, [{}], [{}]);
 
-server.listen(18001, '${env.OPENSHIFT_CAMELVERTX_IP}');
+server.listen(8080, '${env.OPENSHIFT_CAMELVERTX_IP}');

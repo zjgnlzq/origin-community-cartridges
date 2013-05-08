@@ -1,0 +1,9 @@
+#!/bin/bash -eu
+
+case "$1" in
+  -v|--version)
+    version="$2"
+esac
+
+ln -s ${OPENSHIFT_ACTIVEMQ_DIR}/versions/${version}/apache-activemq ${OPENSHIFT_ACTIVEMQ_DIR}/apache-activemq
+

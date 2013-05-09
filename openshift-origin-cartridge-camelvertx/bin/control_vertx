@@ -88,6 +88,8 @@ function build() {
         	hostnames="<hostname>$address<\/hostname>${hostnames}"
 		done
     	
+    	AG_DIR=$(echo "$OPENSHIFT_CAMELVERTX_DIR" | sed -e "s@\/@\\\\/@g")
+    	 
     	pushd $OPENSHIFT_CAMELVERTX_DIR/template/vertx
   			sed -i -e "s/\${env.OPENSHIFT_CAMELVERTX_CLUSTER_PROXY_PORT}/${OPENSHIFT_CAMELVERTX_CLUSTER_PROXY_PORT}/g" \
   					-e "s/\${env.OPENSHIFT_CAMELVERTX_PROXY_IP}/${OPENSHIFT_CAMELVERTX_PROXY_IP}/g" \
@@ -99,6 +101,7 @@ function build() {
 				-e "s/\${env.OPENSHIFT_CAMELVERTX_CLUSTER_PROXY_PORT}/${OPENSHIFT_CAMELVERTX_CLUSTER_PROXY_PORT}/g" \
 				./vert.x-1.3.1.final/bin/vertx
 			sed -i -e "s/\${env.OPENSHIFT_CAMELVERTX_IP}/${OPENSHIFT_CAMELVERTX_IP}/g" ./web.js
+			sed -i -e "s/\${env.OPENSHIFT_CAMELVERTX_DIR}/${AG_DIR}/g" ./web-handlers.js
 		popd
 
 }

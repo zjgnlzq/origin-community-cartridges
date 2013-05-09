@@ -21,7 +21,7 @@ var rm = new vertx.RouteMatcher();
 
 rm.all( '/users', demoHandlers.putRequestOnEventBus('demo.user-registration', { identifier: 'lewis' } ) );
 rm.all( '/bids',  demoHandlers.putRequestOnEventBus('demo.bids' ) );
-rm.allWithRegEx( '/', demoHandlers.rootContext );
+//rm.allWithRegEx( '/', demoHandlers.rootContext );
 
 rm.allWithRegEx( '/auctions(/.*)?', demoHandlers.proxyRequest );
 rm.allWithRegEx( '/file/(.*)',           demoHandlers.serveFile );

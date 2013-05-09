@@ -37,8 +37,7 @@ $.fn.serializeObject = function() {
 };
 
 var jbw = {
-    //baseURL: "http://localhost:8000",
-    baseURL: "http://192.168.1.11:8000",
+	baseURL: document.location.protocol + "//" + document.location.host,
     fetchTemplate: function( path, done ) {
         var JST = window.JST = window.JST || {},
             def = new $.Deferred();

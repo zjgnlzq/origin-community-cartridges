@@ -1,13 +1,13 @@
 Name: activemq
 Cartridge-Short-Name: ACTIVEMQ
 Display-Name: ActiveMQ
-Description: "Apache ActiveMQ ª is the most popular and powerful open source messaging and Integration Patterns server."
+Description: "Apache ActiveMQ is the most popular and powerful open source messaging and Integration Patterns server."
 Version: '5.8'
 License: Apache
 License-Url: http://www.apache.org/licenses/LICENSE-2.0.html
 Vendor: Red Hat
 Cartridge-Version: 0.0.1
-Cartridge-Vendor: redhat
+Cartridge-Vendor: apache
 Categories:
   - service
   - web_framework

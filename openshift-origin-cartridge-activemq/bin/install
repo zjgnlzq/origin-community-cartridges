@@ -5,5 +5,7 @@ case "$1" in
     version="$2"
 esac
 
+cp -r ${OPENSHIFT_ACTIVEMQ_DIR}/versions/${version}/template/* ${OPENSHIFT_ACTIVEMQ_DIR}/template
+
 echo "$version" > "$OPENSHIFT_ACTIVEMQ_DIR/env/OPENSHIFT_ACTIVEMQ_VERSION"
 

@@ -24,7 +24,8 @@ rm.all( '/bids',  demoHandlers.putRequestOnEventBus('demo.bids' ) );
 //rm.allWithRegEx( '/', demoHandlers.rootContext );
 
 rm.allWithRegEx( '/auctions(/.*)?', demoHandlers.proxyRequest );
-rm.allWithRegEx( '/file/(.*)',           demoHandlers.serveFile );
+rm.allWithRegEx( '/(.*)',           demoHandlers.serveFile );
+rm.allWithRegEx( '/assets/items/(.*)?', demoHandlers.proxyRequest );
 
 var server = vertx.createHttpServer();
 server.requestHandler(rm);

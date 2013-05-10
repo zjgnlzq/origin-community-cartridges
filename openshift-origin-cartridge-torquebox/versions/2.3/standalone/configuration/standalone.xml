@@ -572,5 +572,6 @@
         <outbound-socket-binding name="mail-smtp">
             <remote-destination host="localhost" port="25"/>
         </outbound-socket-binding>
+        <socket-binding name='stomp' port='8675'/>
     </socket-binding-group>
 </server>

@@ -92,7 +92,7 @@
 
         <!-- The transport connectors ActiveMQ will listen to -->
         <transportConnectors>
-            <transportConnector name="openwire" uri="tcp://0.0.0.0:61616"/>
+            <transportConnector name="openwire" uri="tcp://${env.OPENSHIFT_ACTIVEMQ_IP}:5445"/>
         </transportConnectors>
 
     </broker>

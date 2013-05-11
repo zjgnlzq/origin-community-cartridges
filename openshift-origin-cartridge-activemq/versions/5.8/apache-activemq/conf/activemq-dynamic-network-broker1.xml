@@ -99,7 +99,7 @@
             Configure discovery URI to use multicast protocol
         -->
         <transportConnectors>
-            <transportConnector name="openwire" uri="tcp://0.0.0.0:61616" discoveryUri="multicast://default" />
+            <transportConnector name="openwire" uri="tcp://${env.OPENSHIFT_ACTIVEMQ_IP}:5445" discoveryUri="multicast://default" />
         </transportConnectors>
 
 

@@ -91,7 +91,7 @@
         <property name="connectors">
             <list>
                 <bean id="Connector" class="org.eclipse.jetty.server.nio.SelectChannelConnector">
-                    <property name="port" value="8161" />
+                    <property name="port" value="8080" />
                 </bean>
                 <!--
                     Enable this connector if you wish to use https with web console

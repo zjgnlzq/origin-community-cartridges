@@ -119,7 +119,7 @@
 
                 http://activemq.apache.org/static-transport-reference.html
 
-            <networkConnector name="host1 and host2" uri="static://(tcp://host1:61616,tcp://host2:61616)"/>
+            <networkConnector name="host1 and host2" uri="static://(tcp://host1:5445,tcp://host2:5445)"/>
             -->
         <!-- /networkConnectors-->
 
@@ -195,7 +195,7 @@
         <transportConnectors>
             <!-- Create a TCP transport that is advertised on via an IP multicast
               group named default. -->
-            <transportConnector name="openwire" uri="tcp://${env.OPENSHIFT_ACTIVEMQ_IP}:61616" discoveryUri="multicast://default"/>
+            <transportConnector name="openwire" uri="tcp://${env.OPENSHIFT_ACTIVEMQ_IP}:5445" discoveryUri="multicast://default"/>
             <!-- Create a SSL transport. Make sure to configure the SSL options
               via the system properties or the sslContext element. -->
             <transportConnector name="ssl" uri="ssl://${env.OPENSHIFT_ACTIVEMQ_IP}:61617"/>

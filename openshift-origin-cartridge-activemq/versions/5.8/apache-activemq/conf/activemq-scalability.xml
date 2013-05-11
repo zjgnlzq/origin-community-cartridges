@@ -69,7 +69,7 @@
             http://activemq.apache.org/configuring-transports.html#ConfiguringTransports-TheNIOTransport
         -->
         <transportConnectors>
-            <transportConnector name="nio" uri="nio://0.0.0.0:61616"/>
+            <transportConnector name="nio" uri="nio://${env.OPENSHIFT_ACTIVEMQ_IP}:5445"/>
         </transportConnectors>
 
     </broker>

@@ -8,6 +8,7 @@ License-Url: http://www.gnu.org/copyleft/lesser.txt
 Vendor: Red Hat
 Cartridge-Version: 0.0.1
 Cartridge-Vendor: jboss
+Source-Url: http://github.com/openshift/origin-community-cartridges/openshift-origin-cartridge-torquebox
 Categories:
   - service
   - web_framework

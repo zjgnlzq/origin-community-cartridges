@@ -43,7 +43,7 @@
         <transportConnectors>
             <!-- Create a XMPP transport for XMPP clients. -->
             <transportConnector name="xmpp" uri="xmpp://${env.OPENSHIFT_ACTIVEMQ_IP}:61222"/>
-            <transportConnector name="openwire" uri="tcp://0.0.0.0:61616"/>
+            <transportConnector name="openwire" uri="tcp://${env.OPENSHIFT_ACTIVEMQ_IP}:5445"/>
         </transportConnectors>
     </broker>
 

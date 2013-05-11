@@ -28,7 +28,7 @@
         The <broker> element is used to configure the ActiveMQ broker.
 
         advisories incurr a hit with every add connection|destination|producer|consumer
-          - client side:  providerUrl = tcp://${env.OPENSHIFT_ACTIVEMQ_IP}:61616?jms.watchTopicAdvisories=false
+          - client side:  providerUrl = tcp://${env.OPENSHIFT_ACTIVEMQ_IP}:5445?jms.watchTopicAdvisories=false
         statistics have a small impact on concurrency so disable
         schedualer has a small impact as it checks for the presence three properties on each message
         jmx adds a bunch of wrapper classes
@@ -110,7 +110,7 @@
             http://activemq.apache.org/configuring-transports.html
         -->
         <transportConnectors>
-            <transportConnector name="openwire" uri="tcp://0.0.0.0:61616"/>
+            <transportConnector name="openwire" uri="tcp://${env.OPENSHIFT_ACTIVEMQ_IP}:5445"/>
         </transportConnectors>
 
     </broker>

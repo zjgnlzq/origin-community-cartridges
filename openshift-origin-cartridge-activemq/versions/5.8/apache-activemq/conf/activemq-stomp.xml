@@ -111,8 +111,8 @@
             http://activemq.apache.org/configuring-transports.html
         -->
         <transportConnectors>
-            <transportConnector name="stomp" uri="stomp://0.0.0.0:61612?transport.closeAsync=false"/>
-            <transportConnector name="stomp+nio" uri="stomp+nio://0.0.0.0:61613?transport.closeAsync=false"/>
+            <transportConnector name="stomp" uri="stomp://${env.OPENSHIFT_ACTIVEMQ_IP}:61612?transport.closeAsync=false"/>
+            <transportConnector name="stomp+nio" uri="stomp+nio://${env.OPENSHIFT_ACTIVEMQ_IP}:61613?transport.closeAsync=false"/>
         </transportConnectors>
 
         <!-- destroy the spring context on shutdown to stop jetty -->

@@ -114,7 +114,7 @@
     </plugins>
     
     <transportConnectors>
-       <transportConnector name="default" uri="tcp://0.0.0.0:61616"/>
+       <transportConnector name="default" uri="tcp://${env.OPENSHIFT_ACTIVEMQ_IP}:5445"/>
     </transportConnectors>
 
     <!-- destroy the spring context on shutdown to stop jetty -->

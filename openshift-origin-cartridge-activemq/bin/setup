@@ -7,5 +7,5 @@ esac
 
 mkdir -p ${OPENSHIFT_ACTIVEMQ_DIR}/{template}
 
-ln -s ${OPENSHIFT_ACTIVEMQ_DIR}/versions/${version}/apache-activemq ${OPENSHIFT_ACTIVEMQ_DIR}/apache-activemq
+cp -r ${OPENSHIFT_ACTIVEMQ_DIR}/versions/${version}/apache-activemq ${OPENSHIFT_ACTIVEMQ_DIR}/apache-activemq
 

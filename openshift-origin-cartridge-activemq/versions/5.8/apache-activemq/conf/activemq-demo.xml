@@ -195,16 +195,16 @@
         <transportConnectors>
             <!-- Create a TCP transport that is advertised on via an IP multicast
               group named default. -->
-            <transportConnector name="openwire" uri="tcp://localhost:61616" discoveryUri="multicast://default"/>
+            <transportConnector name="openwire" uri="tcp://${env.OPENSHIFT_ACTIVEMQ_IP}:61616" discoveryUri="multicast://default"/>
             <!-- Create a SSL transport. Make sure to configure the SSL options
               via the system properties or the sslContext element. -->
-            <transportConnector name="ssl" uri="ssl://localhost:61617"/>
+            <transportConnector name="ssl" uri="ssl://${env.OPENSHIFT_ACTIVEMQ_IP}:61617"/>
             <!-- Create a STOMP transport for STOMP clients. -->
-            <transportConnector name="stomp" uri="stomp://localhost:61613"/>
+            <transportConnector name="stomp" uri="stomp://${env.OPENSHIFT_ACTIVEMQ_IP}:61613"/>
             <!-- Create a XMPP transport for XMPP clients. -->
-            <transportConnector name="xmpp" uri="xmpp://localhost:61222"/>
+            <transportConnector name="xmpp" uri="xmpp://${env.OPENSHIFT_ACTIVEMQ_IP}:61222"/>
             <!-- Create a Websocket transport for the websocket dmeo -->
-            <transportConnector name="ws" uri="ws://localhost:61614/" />
+            <transportConnector name="ws" uri="ws://${env.OPENSHIFT_ACTIVEMQ_IP}:61614/" />
         </transportConnectors>
 
         <!-- destroy the spring context on shutdown to stop jetty -->
@@ -238,7 +238,7 @@
 
         http://activemq.apache.org/command-agent.html
 
-    <commandAgent xmlns="http://activemq.apache.org/schema/core" brokerUrl="vm://localhost"/>
+    <commandAgent xmlns="http://activemq.apache.org/schema/core" brokerUrl="vm://${env.OPENSHIFT_ACTIVEMQ_IP}"/>
     -->
 
 
@@ -250,7 +250,7 @@
     <!-- Postgres DataSource Sample Setup -->
     <!--
     <bean id="postgres-ds" class="org.postgresql.ds.PGPoolingDataSource">
-      <property name="serverName" value="localhost"/>
+      <property name="serverName" value="${env.OPENSHIFT_ACTIVEMQ_IP}"/>
       <property name="databaseName" value="activemq"/>
       <property name="portNumber" value="0"/>
       <property name="user" value="activemq"/>
@@ -265,7 +265,7 @@
     <!--
     <bean id="mysql-ds" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
       <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-      <property name="url" value="jdbc:mysql://localhost/activemq?relaxAutoCommit=true"/>
+      <property name="url" value="jdbc:mysql://${env.OPENSHIFT_ACTIVEMQ_IP}/activemq?relaxAutoCommit=true"/>
       <property name="username" value="activemq"/>
       <property name="password" value="activemq"/>
       <property name="maxActive" value="200"/>
@@ -277,7 +277,7 @@
     <!--
     <bean id="oracle-ds" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
       <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
-      <property name="url" value="jdbc:oracle:thin:@localhost:1521:AMQDB"/>
+      <property name="url" value="jdbc:oracle:thin:@${env.OPENSHIFT_ACTIVEMQ_IP}:1521:AMQDB"/>
       <property name="username" value="scott"/>
       <property name="password" value="tiger"/>
       <property name="maxActive" value="200"/>

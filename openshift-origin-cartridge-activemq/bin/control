@@ -138,8 +138,40 @@ function deploy() {
   fi
 }
 
+function copy_conf() {
+	# Create a link for each file in user config to server standalone/config
+	if [ -d ${OPENSHIFT_REPO_DIR}.openshift/config ]
+	then
+	  for f in ${OPENSHIFT_REPO_DIR}.openshift/config/*
+	  do
+	    target=$(basename $f)
+	    # Remove any target that is being overwritten
+	    if [ -e "${OPENSHIFT_ACTIVEMQ_DIR}/apache-activemq/conf/$target" ]
+	    then
+	       echo "Removing existing $target"
+	       rm -rf "${OPENSHIFT_ACTIVEMQ_DIR}/apache-activemq/conf/$target"
+	       cp ${OPENSHIFT_REPO_DIR}.openshift/config/$target ${OPENSHIFT_ACTIVEMQ_DIR}/apache-activemq/conf
+	    fi
+	  done
+	else
+		cp ${OPENSHIFT_ACTIVEMQ_DIR}/versions/${version}/apache-activemq/conf/* ${OPENSHIFT_ACTIVEMQ_DIR}/apache-activemq/conf
+	fi
+}
+
+function replace_envs() {
+	for f in ${OPENSHIFT_ACTIVEMQ_DIR}/apache-activemq/conf/*.xml
+	do
+		sed -i -e "s/\${env.OPENSHIFT_ACTIVEMQ_IP}/$OPENSHIFT_ACTIVEMQ_IP/g" \
+			$f
+	done
+}
+
 function start() {
   echo "Starting $cartridge_type cart"
+  
+  copy_conf
+  
+  replace_envs
     
   if marker_present "enable_jpda"
   then

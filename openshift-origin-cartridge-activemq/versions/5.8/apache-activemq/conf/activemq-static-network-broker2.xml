@@ -68,7 +68,7 @@
             Create a duplex connector to the first broker
         -->
         <networkConnectors>
-            <networkConnector uri="static:(tcp://localhost:61616)" duplex="true"/>
+            <networkConnector uri="static:(tcp://${env.OPENSHIFT_ACTIVEMQ_IP}:61616)" duplex="true"/>
         </networkConnectors>
 
         <persistenceAdapter>

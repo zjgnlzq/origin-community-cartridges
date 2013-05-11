@@ -64,7 +64,7 @@
   <!-- Postgres DataSource Sample Setup -->
   <!--
   <bean id="postgres-ds" class="org.postgresql.ds.PGPoolingDataSource">
-    <property name="serverName" value="localhost"/>
+    <property name="serverName" value="${env.OPENSHIFT_ACTIVEMQ_IP}"/>
     <property name="databaseName" value="activemq"/>
     <property name="portNumber" value="0"/>
     <property name="user" value="activemq"/>
@@ -79,7 +79,7 @@
   <!--
   <bean id="mysql-ds" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
     <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-    <property name="url" value="jdbc:mysql://localhost/activemq?relaxAutoCommit=true"/>
+    <property name="url" value="jdbc:mysql://${env.OPENSHIFT_ACTIVEMQ_IP}/activemq?relaxAutoCommit=true"/>
     <property name="username" value="activemq"/>
     <property name="password" value="activemq"/>
     <property name="maxActive" value="200"/>
@@ -91,7 +91,7 @@
   <!--
   <bean id="oracle-ds" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
     <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
-    <property name="url" value="jdbc:oracle:thin:@localhost:1521:AMQDB"/>
+    <property name="url" value="jdbc:oracle:thin:@${env.OPENSHIFT_ACTIVEMQ_IP}:1521:AMQDB"/>
     <property name="username" value="scott"/>
     <property name="password" value="tiger"/>
     <property name="maxActive" value="200"/>

@@ -42,11 +42,11 @@
 
         <transportConnectors>
             <!-- Create a XMPP transport for XMPP clients. -->
-            <transportConnector name="xmpp" uri="xmpp://localhost:61222"/>
+            <transportConnector name="xmpp" uri="xmpp://${env.OPENSHIFT_ACTIVEMQ_IP}:61222"/>
             <transportConnector name="openwire" uri="tcp://0.0.0.0:61616"/>
         </transportConnectors>
     </broker>
 
     <!-- Create a command agent -->
-    <commandAgent xmlns="http://activemq.apache.org/schema/core" brokerUrl="vm://localhost"/>
+    <commandAgent xmlns="http://activemq.apache.org/schema/core" brokerUrl="vm://${env.OPENSHIFT_ACTIVEMQ_IP}"/>
 </beans>

@@ -128,7 +128,7 @@
       Configure command agent to be used in secured broker environment
       Notice how we used ${activemq.username} and ${activemq.password} configured in credential.properties
   -->
-  <commandAgent xmlns="http://activemq.apache.org/schema/core" brokerUrl="vm://localhost" username="${activemq.username}" password="${activemq.password}"/>
+  <commandAgent xmlns="http://activemq.apache.org/schema/core" brokerUrl="vm://${env.OPENSHIFT_ACTIVEMQ_IP}" username="${activemq.username}" password="${activemq.password}"/>
 
   <!-- Use Web applications and Camel in secured broker environment -->
   <import resource="jetty.xml"/>

@@ -92,6 +92,7 @@
             <list>
                 <bean id="Connector" class="org.eclipse.jetty.server.nio.SelectChannelConnector">
                     <property name="port" value="8080" />
+                    <property name="host" value="${env.OPENSHIFT_ACTIVEMQ_IP}" />
                 </bean>
                 <!--
                     Enable this connector if you wish to use https with web console

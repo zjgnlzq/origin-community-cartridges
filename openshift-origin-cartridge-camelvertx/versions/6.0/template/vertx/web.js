@@ -23,9 +23,9 @@ rm.all( '/users', demoHandlers.putRequestOnEventBus('demo.user-registration', { 
 rm.all( '/bids',  demoHandlers.putRequestOnEventBus('demo.bids' ) );
 //rm.allWithRegEx( '/', demoHandlers.rootContext );
 
+rm.allWithRegEx( '/assets/items/(.*)?', demoHandlers.proxyRequest );
 rm.allWithRegEx( '/auctions(/.*)?', demoHandlers.proxyRequest );
 rm.allWithRegEx( '/(.*)',           demoHandlers.serveFile );
-rm.allWithRegEx( '/assets/items/(.*)?', demoHandlers.proxyRequest );
 
 var server = vertx.createHttpServer();
 server.requestHandler(rm);

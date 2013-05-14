@@ -5,7 +5,7 @@ Description: "Camel Vert.x KeyNote 2013"
 Version: '6.0'
 License: LGPL
 License-Url: http://www.gnu.org/copyleft/lesser.txt
-Vendor: Red Hat
+Vendor: JBoss
 Cartridge-Version: 0.0.1
 Cartridge-Vendor: jboss
 Source-Url: http://github.com/openshift/origin-community-cartridges/openshift-origin-cartridge-camelvertx

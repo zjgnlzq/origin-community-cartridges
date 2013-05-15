@@ -80,6 +80,8 @@
     <!-- configure host/port -->
     <property name="host" value="${env.OPENSHIFT_CAMELVERTX_IP}"/>
     <property name="port" value="9123"/>
+    <property name="advertiseHost" value="${env.OPENSHIFT_GEAR_DNS}"/>
+    <property name="advertisePort" value="${env.OPENSHIFT_CAMELVERTX_VERTX_PROXY_PORT}"/>
   </bean>
 
   <!-- Lets create a stomp component -->

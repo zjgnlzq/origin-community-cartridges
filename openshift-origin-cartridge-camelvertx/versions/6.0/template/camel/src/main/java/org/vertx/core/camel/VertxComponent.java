@@ -30,6 +30,8 @@ public class VertxComponent extends DefaultComponent {
     private Vertx vertx;
     private String host = "127.0.0.1";
     private int port = 5701;
+    private String advertiseHost = "127.0.0.1";
+    private int advertisePort = 5701;
 
     public String getHost() {
         return host;
@@ -46,12 +48,30 @@ public class VertxComponent extends DefaultComponent {
     public void setPort(int port) {
         this.port = port;
     }
+    
+    public String getAdvertiseHost() {
+        return advertiseHost;
+    }
+
+    public void setAdvertiseHost(String advertiseHost) {
+        this.advertiseHost = advertiseHost;
+    }
+
+    public int getAdvertisePort() {
+        return advertisePort;
+    }
+
+    public void setAdvertisePort(int advertisePort) {
+        this.advertisePort = advertisePort;
+    }
+
 
     public Vertx getVertx() {
         if (vertx == null) {
             // lets using a host / port if a host name is specified
             if (host != null && host.length() > 0) {
-                vertx = Vertx.newVertx(port, host);
+            	System.out.println("!!!!!!!!!!!!!!USING " + host + ":" + port + " " + advertiseHost + ":" + advertisePort);
+                vertx = Vertx.newVertx(port, host, advertisePort, advertiseHost);
             } else {
                 vertx = Vertx.newVertx();
             }

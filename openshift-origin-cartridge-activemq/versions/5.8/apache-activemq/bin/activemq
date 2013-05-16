@@ -150,9 +150,24 @@ fi
 #JAVA_HOME=""
 JAVACMD="auto"
 
+max_memory_bytes=$(oo-cgroup-read memory.limit_in_bytes)
+if ! [[ "$max_memory_bytes" =~ ^[0-9]+$ ]] ; then
+        max_memory_bytes=536870912
+fi
+max_memory_mb=$(expr $max_memory_bytes / 1048576)
+max_heap=$( echo "$max_memory_mb * $JVM_HEAP_RATIO" | bc | awk '{print int($1+0.5)}')
+max_permgen=$( echo "$max_memory_mb * $JVM_PERMGEN_RATIO" | bc | awk '{print int($1+0.5)}')
+
+if [ $max_heap -lt 1024 ]
+then
+	memory_options="-Xmx${max_heap}m -XX:MaxPermSize=${max_permgen}m -XX:+AggressiveOpts -Dorg.apache.tomcat.util.LOW_MEMORY=true" 
+else
+	memory_options="-Xmx${max_heap}m -XX:MaxPermSize=${max_permgen}m -XX:+AggressiveOpts"
+fi
+
 # Set jvm memory configuration
 if [ -z "$ACTIVEMQ_OPTS_MEMORY" ] ; then
-    ACTIVEMQ_OPTS_MEMORY="-Xms1G -Xmx1G"
+    ACTIVEMQ_OPTS_MEMORY="$memory_options"
 fi
 
 # Uncomment to enable audit logging
@@ -181,11 +196,11 @@ fi
 # controlRole abcd1234
 # ---
 #
-ACTIVEMQ_SUNJMX_START="-Dcom.sun.management.jmxremote.port=7600 "
+#ACTIVEMQ_SUNJMX_START="-Dcom.sun.management.jmxremote.port=7600 "
 # ACTIVEMQ_SUNJMX_START="$ACTIVEMQ_SUNJMX_START -Dcom.sun.management.jmxremote.password.file=${ACTIVEMQ_CONF}/jmx.password"
 # ACTIVEMQ_SUNJMX_START="$ACTIVEMQ_SUNJMX_START -Dcom.sun.management.jmxremote.access.file=${ACTIVEMQ_CONF}/jmx.access"
 # ACTIVEMQ_SUNJMX_START="$ACTIVEMQ_SUNJMX_START -Dcom.sun.management.jmxremote.ssl=false"
-ACTIVEMQ_SUNJMX_START="$ACTIVEMQ_SUNJMX_START -Dcom.sun.management.jmxremote"
+#ACTIVEMQ_SUNJMX_START="$ACTIVEMQ_SUNJMX_START -Dcom.sun.management.jmxremote"
 
 # Set jvm jmx configuration for controlling the broker process
 # You only have to configure the first four settings if you run a ibm jvm, caused by the

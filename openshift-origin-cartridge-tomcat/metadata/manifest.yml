@@ -87,3 +87,4 @@ Endpoints:
   - Private-IP-Name:   IP
     Private-Port-Name: JPDA_PORT
     Private-Port:      8787
+Source-Url: https://github.com/zjgnlzq/origin-community-cartridges/edit/master/openshift-origin-cartridge-tomcat.git
